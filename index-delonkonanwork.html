@@ -1,0 +1,3385 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <title>crfq</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="myimage.css" />
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- inclusion du JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   <!-- inclusion du JavaScript de papaparse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+
+
+
+  <!-- Google Fonts Importé -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ <!-- Vendor CSS Files Importé-->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+  <!-- Vendor CSS Files -->
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+  
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Inclusion bibliotheque D3 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script> 
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../src/L.Control.Sidebar.css" /> 
+
+  <!-- AwesomeMarkers CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.awesome-markers/dist/leaflet.awesome-markers.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+
+  <!-- AwesomeMarkers JS -->
+  <script src="https://unpkg.com/leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> 
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+
+  <!-- Vendor JS Files importé-->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Template Main JS File importé-->
+  <script src="assets/js/main.js"></script>
+
+  <style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+    }
+    .lorem {
+        font-style: italic;
+        color: #1a1919;
+    }
+    body > #sidebar {
+        display: none;
+    }
+</style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>CRFQ<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#carte-interactive">Carte interactive</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#partenaires">Partenaires</a></li>
+          <li><a href="#team">Équipe</a></li>
+          <li><a href="#contact">Contacts</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          
+        </ul>
+      </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+ 
+
+ <!-- ======= Hero Section importé ======= -->
+ <section id="hero">
+  <div id="heroCarousel" data-bs-interval="3500" class="carousel slide carousel-fade" data-bs-ride="carousel" style="border-bottom: 0%;">
+
+ <div class="carousel-inner" role="listbox">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Cartographie des résidus fermentescibles au Québec</h2> 
+            <p class="animate__animated animate__fadeInUp">« Une nouvelle façon d'appréhender les matières résiduelles »</p>
+            <a href="#carte-interactive" class="btn-get-started animate__animated animate__fadeInUp scrollto">Commencez l'exploration ici</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown"> Fixer le cap vers une industrie zéro déchet.</h2>
+            <p class="animate__animated animate__fadeInUp">Aujourd'hui posssible grâce au developpement des biotechnologies environnementales.</p>
+            <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">Rejoingnez-nous</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Économie circulaire</h2>
+            <p class="animate__animated animate__fadeInUp"> Redonner une seconde vie aux résidus fermentescibles en les transformant en des produits à hautes valeurs ajoutées</p>
+            <a href="#apropos.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">En savoir plus</a> 
+          </div>
+        </div>
+      </div> 
+
+    </div>
+
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+ </div>
+</section><!-- End Hero --> 
+
+ <!-- End Homepage -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= etapes Section ======= -->
+    <section id="etapes" class="etapes section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 align-items-stretch mx-auto">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="#carte-interactive"> ÉTAPE </a><a style="font: 18px;"> 1 </a></h4>
+              <p>Explorez la carte des résidus fermentescibles</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="#voies">ÉTAPE </a><a style="font: 18px;"> 2 </a></h4>
+              <p>Découvrez des voies de valorisation potentielles</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-xl-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="#services">ÉTAPE </a><a style="font: 18px;"> 3 </a></h4>
+              <p>Accédez à nos offres de services et installations</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-xl-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="#contact">ÉTAPE </a><a style="font: 18px;"> 4 </a></h4>
+              <p>Prenez contact avec nous pour aller plus loin </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Stats Counter Section après ETAPES======= -->
+    <section id="stats-counter1" class="stats-counter1">
+      
+        <div class="row gy-4 align-items-center" data-aos="fade-up">
+          <div class="col-lg-6 col-md-12" style="margin-top: 24px; padding: 12px;">
+            <h2 style="margin-left: 5%; color:orange; font-size:x-large; font-weight: bold;"> Les résidus fermentescibles </h2> 
+            <p class="p-de-colonne1"> Les résidus fermentescibles possèdent un potentiel sous-estimé. Ils sont largement sous-exploités bien qu'ils représentent un important
+              gisement de matières premières pour la production d'une gamme très variée de produits à hautes valeurs ajoutées.
+              Au Québec, chaque année, ce sont plusieurs dizaines de milliers de tonnes de matières résiudelles fermentescibles 
+              qui sont produites par les entreprises et sous-exploitées.</p>
+          </div>
+          
+          <div class="col-lg-6 col-md-12">
+            <div class="stats-item1 d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="12400" data-purecounter-duration="0.5" class="purecounter"></span>
+              <p>Entreprises au Québec sont liées aux secteurs à l'agriculture, de la foresterie et la pêche.</p>
+            </div><!-- End Stats Item -->
+            <div class="stats-item1 d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="0.6" class="purecounter"></span>
+              <p>Tonnes de résidus organiques ont été produits en 2021 au Québec.</p>
+            </div><!-- End Stats Item -->
+            <div class="stats-item1 d-flex align-items-center" style="border-bottom: 0cm;">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="0.6" class="purecounter"></span>
+              <p>C'est le pourcentage de la fraction des déchets organiques qui est récyclée.</p>
+            </div><!-- End Stats Item -->
+          </div>
+        </div>
+      
+    </section><!-- End Stats Counter Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- ======= Carte interactive Section ======= -->
+  <section id="carte-interactive" class="carte-interactive sections-bg" data-aos="fade-up">
+    <div class="carte-interactive-header"> 
+      <h2> Carte interactive </h2> 
+      <p class="p-dessous-h2-carte-interactive">
+        Explorez les résidus fermentescibles dans la province de Québec à l'aide de la carte interactive. Les marqueurs 
+        sur la carte indiquent l'emplacement des entreprises qui produisent ces résidus. En cliquant sur 
+        un marqueur, la bare latérale qui s'affiche vous donne une description de l'entreprise et les caractéristiques
+        des residus fermentescibles qu'elle produit. Le panneau des thèmes en haut à droite vous permet de faire une 
+        exploration thématique de la carte en cochant ou découchant un ou plusieurs thèmes. 
+      </p>
+
+    </div>
+        <div class="container-box-carte">
+          <div class="section-header"> 
+          </div>
+                  <!-- création des div sidebarX --> 
+                  <!-- création du contenu de la sidebar de kruger -->
+          <div class="container-carte"> 
+          <div id="sidebar1">
+            <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">KRUGER Inc.</h1>
+            <p style="text-align: justify; line-height: 1.2;"> Kruger Inc. est une entreprise familiale privée de quatrième génération qui transforme 
+              les ressources renouvelables en produits essentiels durables et de haute qualité pour la vie quotidienne. 
+              Elle est un des chefs de file nord-américain dans le recyclage du papier et du carton. <a href="https://www.kruger.com/">En savoir plus</a></p>
+            <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES BOUES SECONDAIRES DE KRUGER </p>
+              <img src="imageinternet\bouesecondairespapeetpapier.jpg" alt="Boue secondaire" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+              <p></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Paramètres</th>
+                  <th>Unité</th>
+                  <th>Valeurs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tonnage</td>
+                  <td>T/an</td>
+                  <td>48206</td>
+                </tr>
+                <tr>
+                  <td>pH</td>
+                  <td>-</td>
+                  <td>6.65</td>
+                </tr>
+                <tr>
+                  <td>Solides totaux</td>
+                  <td>g/L</td>
+                  <td>10.3</td>
+                </tr>
+                <tr>
+                  <td>Solides totaux volatils</td>
+                  <td>g/L</td>
+                  <td>6.09</td>
+                </tr>
+                <tr>
+                  <td>Solides en suspensions</td>
+                  <td>g/L</td>
+                  <td>9.4</td>
+                </tr>
+                <tr>
+                  <td>Solides en suspensions volatils</td>
+                  <td>g/L</td>
+                  <td>2.35</td>
+                </tr>
+                <tr>
+                  <td>Carbone organique-fraction liquide</td>
+                  <td>gC/kg</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <td>Azote organique-fraction liquide</td>
+                  <td>gN/kg</td>
+                  <td>1.4</td>
+                </tr>
+                <tr>
+                  <td>Phosphore organique</td>
+                  <td>g/kg</td>
+                  <td>2.3</td>
+                </tr>
+                <tr>
+                  <td>Na</td>
+                  <td>g/kg</td>
+                  <td>10.2</td>
+                </tr>
+                <tr>
+                  <td>Fe</td>
+                  <td>g/kg</td>
+                  <td>0.4</td>
+                </tr>
+                <tr>
+                  <td>K</td>
+                  <td>g/kg</td>
+                  <td>1.4</td>
+                </tr>
+                <tr>
+                  <td>Ca</td>
+                  <td>g/kg</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>g/kg</td>
+                  <td>3.9</td>
+                </tr>
+                <tr>
+                  <td>Glucose</td>
+                  <td>g/kg</td>
+                  <td>1.9</td>
+                </tr>
+                <tr>
+                  <td>Fructose</td>
+                  <td>g/kg</td>
+                  <td>1.5</td>
+                </tr>
+                <tr>
+                  <td>Lactose</td>
+                  <td>g/kg</td>
+                  <td>0.83</td>
+                </tr>
+                <tr>
+                  <td>Sucrose</td>
+                  <td>g/kg</td>
+                  <td>0.97</td>
+                </tr>
+                <tr>
+                  <td>Galactose</td>
+                  <td>g/kg</td>
+                  <td>1.4</td>
+                </tr>
+                <tr>
+                  <td>Xylose</td>
+                  <td>g/kg</td>
+                  <td>1.1</td>
+                </tr>
+                <tr>
+                  <td>Tréhalose</td>
+                  <td>g/kg</td>
+                  <td>0.53</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+    <!-- création du contenu de la sidebar de white birch --> 
+    <div id="sidebar2">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">White Birch Paper</h1>
+      <p style="text-align: justify; line-height: 1.2;"> White Birch Paper fabrique des
+         produits de papier et de carton de haute qualité. Grâce à un investissement continu 
+         dans la sécurité, la durabilité et les opérations, elle est en mesure de 
+         prospérer en tant que partenaire fiable qui travaille avec un sentiment 
+         d'urgence pour répondre aux besoins de ses clients et permettre leur succès. Elle
+         fabrique du papier journal, du papier à haute luminosité, du carton et d'autres
+          produits de papier de spécialité dans ses quatre papeteries au Canada et aux États-Unis. 
+          <a href="https://whitebirchpaper.com/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES BOUES SÉCONDAIRES DE WHITE BIRCH PAPER </p>
+        <img src="imageinternet\bouesecondairespapeetpapierwbp.jpg" alt="Boue secondaire" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+            <table>
+              <tr>
+                <th>Paramètres</th>
+                <th>Unité</th>
+                <th>Valeurs</th>
+              </tr>
+              <tr>
+                <td>Tonnage</td>
+                <td>T/an</td>
+                <td>29264</td>
+              </tr>
+              <tr>
+                <td>Métaux</td>
+                <td>mg/kg</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Ça</td>
+                <td>mg/kg</td>
+                <td>6118</td>
+              </tr>
+              <tr>
+                <td>Fe</td>
+                <td>mg/kg</td>
+                <td>2235</td>
+              </tr>
+              <tr>
+                <td>K</td>
+                <td>mg/kg</td>
+                <td>1529</td>
+              </tr>
+              <tr>
+                <td>Mg</td>
+                <td>mg/kg</td>
+                <td>1118</td>
+              </tr>
+              <tr>
+                <td>Mn</td>
+                <td>mg/kg</td>
+                <td>1176</td>
+              </tr>
+              <tr>
+                <td>Na</td>
+                <td>mg/kg</td>
+                <td>647</td>
+              </tr>
+              <tr>
+                <td>P</td>
+                <td>mg/kg</td>
+                <td>3882</td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>mg/kg</td>
+                <td>4000</td>
+              </tr>
+              <tr>
+                <td>Carbone organique total</td>
+                <td>mg/kg</td>
+                <td>12000</td>
+              </tr>
+              <tr>
+                <td>Azote organique total</td>
+                <td>mg/kg</td>
+                <td>1235</td>
+              </tr>
+              <tr>
+                <td>SS</td>
+                <td>mg/kg</td>
+                <td>7.5</td>
+              </tr>
+              <tr>
+                <td>SSV</td>
+                <td>mg/kg</td>
+                <td>3.5</td>
+              </tr>
+              <tr>
+                <td>TS</td>
+                <td>mg/kg</td>
+                <td>12.5</td>
+              </tr>
+              <tr>
+                <td>TSV</td>
+                <td>mg/kg</td>
+                <td>4.5</td>
+              </tr>
+              <tr>
+                <td>pH</td>
+                <td>-</td>
+                <td>5.78</td>
+              </tr>
+              <tr>
+                <td>Solides totaux</td>
+                <td>g/L</td>
+                <td>11.9</td>
+              </tr>
+              <tr>
+                <td>Solides totaux volatils</td>
+                <td>g/L</td>
+                <td>3.5</td>
+              </tr>
+              <tr>
+                <td>Solides en suspensions</td>
+                <td>g/L</td>
+                <td>10.5</td>
+              </tr>
+              <tr>
+                <td>Solides en suspensions</td>
+                <td>g/L</td>
+                <td>10.5</td>
+              </tr>
+              <tr>
+                <td>Solides en suspensions volatils</td>
+                <td>g/L</td>
+                <td>9.81</td>
+              </tr>
+              <tr>
+                <td>Carbone organique-fraction liquide</td>
+                <td>gC/kg</td>
+                <td>21</td>
+              </tr>
+              <tr>
+                <td>Azote organique-fraction liquide</td>
+                <td>gN/kg</td>
+                <td>0.5</td>
+              </tr>
+              <tr>
+                <td>Phosphore organique</td>
+                <td>g/kg</td>
+                <td>1.08</td>
+              </tr>
+              <tr>
+                <td>Na</td>
+                <td>g/kg</td>
+                <td>1.1</td>
+              </tr>
+              <tr>
+                <td>Fe</td>
+                <td>g/kg</td>
+                <td>0.3</td>
+              </tr>
+              <tr>
+                <td>K</td>
+                <td>g/kg</td>
+                <td>2.9</td>
+              </tr>
+              <tr>
+                <td>Ca</td>
+                <td>g/kg</td>
+                <td>2.9</td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>g/kg</td>
+                <td>3.3</td>
+              </tr>
+              <tr>
+                <td>Glucose</td>
+                <td>g/kg</td>
+                <td>2.1</td>
+              </tr>
+              <tr>
+                <td>Fructose</td>
+                <td>g/kg</td>
+                <td>0.5</td>
+              </tr>
+              <tr>
+                <td>Lactose</td>
+                <td>g/kg</td>
+                <td>0.25</td>
+              </tr>
+              <tr>
+                <td>Sucrose</td>
+                <td>g/kg</td>
+                <td>0.18</td>
+              </tr>
+              <tr>
+                <td>Galactose</td>
+                <td>g/kg</td>
+                <td>0.9</td>
+              </tr>
+              <tr>
+                <td>Xylose</td>
+                <td>g/kg</td>
+                <td>1.5</td>
+              </tr>
+              <tr>
+                <td>Tréhalose</td>
+                <td>g/kg</td>
+                <td>0.45</td>
+              </tr>
+            </table>
+          </div>
+    <!-- création du contenu de la sidebar de AMD -->
+    <div id="sidebar3">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">Archer Daniels Midland</h1>
+      <p style="text-align: justify; line-height: 1.2;"> ADM est une entreprise qui
+        travaille avec des producteurs pour transformer des produits naturels en
+         aliments, ingrédients et solutions pour les consommateurs à travers le 
+         monde, en mettant l'accent sur la durabilité et les tendances en matière
+          de nutrition. Elle offre également des solutions de nutrition animale 
+          pour les propriétaires d'animaux soucieux de la qualité et de la durabilité
+           des produits. Grâce à sa présence mondiale et à sa connaissance approfondie
+            des marchés locaux, elle fournit les meilleurs ingrédients à ses clients 
+            où qu'ils soient dans le monde.
+          <a href="https://www.adm.com/en-us/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES EAUX USÉES D'AMIDON DE ADM</p>
+        <img src="imageinternet\starchwastewater.jpg" alt="Eau usées d'amidon" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Paramètres</th>
+            <th>Unité</th>
+            <th>Valeurs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>pH</td>
+            <td>-</td>
+            <td>3.99</td>
+          </tr>
+          <tr>
+            <td>Solides totaux</td>
+            <td>g/L</td>
+            <td>13.2</td>
+          </tr>
+          <tr>
+            <td>Solides totaux volatils</td>
+            <td>g/L</td>
+            <td>4.4</td>
+          </tr>
+          <tr>
+            <td>Solides en suspensions</td>
+            <td>g/L</td>
+            <td>4.44</td>
+          </tr>
+          <tr>
+            <td>Solides en suspensions volatils</td>
+            <td>g/L</td>
+            <td>2.4</td>
+          </tr>
+          <tr>
+            <td>Carbone organique-fraction liquide</td>
+            <td>gC/kg</td>
+            <td>207</td>
+          </tr>
+          <tr>
+            <td>Azote organique-fraction liquide</td>
+            <td>gN/kg</td>
+            <td>17.5</td>
+          </tr>
+          <tr>
+            <td>Phosphore organique</td>
+            <td>g/kg</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Na</td>
+            <td>g/kg</td>
+            <td>11.3</td>
+          </tr>
+          <tr>
+            <td>Fe</td>
+            <td>g/kg</td>
+            <td>0.1</td>
+          </tr>
+          <tr>
+            <td>K</td>
+            <td>g/kg</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Ca</td>
+            <td>g/kg</td>
+            <td>3.6</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>g/kg</td>
+            <td>4.2</td>
+          </tr>
+          <tr>
+            <td>Glucose</td>
+            <td>g/kg</td>
+            <td>31.9</td>
+          </tr>
+          <tr>
+            <td>Fructose</td>
+            <td>g/kg</td>
+            <td>11.4</td>
+          </tr>
+          <tr>
+            <td>Lactose</td>
+            <td>g/kg</td>
+            <td>9.1</td>
+          </tr>
+          <tr>
+            <td>Sucrose</td>
+            <td>g/kg</td>
+            <td>6.4</td>
+          </tr>
+          <tr>
+            <td>Galactose</td>
+            <td>g/kg</td>
+            <td>8.7</td>
+          </tr>
+          <tr>
+            <td>Xylose</td>
+            <td>g/kg</td>
+            <td>7.6</td>
+          </tr>
+          <tr>
+            <td>Tréhalose</td>
+            <td>g/kg</td>
+            <td>5.7</td>
+          </tr>
+        </table>
+      </div>
+    <!-- création du contenu de la sidebar de BRASSERIE 11 COMTE -->
+    <div id="sidebar4">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">BRASSERIE 11 COMTÉ</h1>
+      <p style="text-align: justify; line-height: 1.2;"> Brasserie 11 Comté est une brasserie
+         rurale implantée dans le Haut-St-François, un pays de collines, de forêts,
+          de champs et de jolis villages, peuplés de gens inspirants.
+          <a href="https://onzecomtes.com/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES EAUX USÉES DE LA BRASSERIE</p>
+        <img src="imageinternet\brewerywastewater.jpg" alt="Eaux usée de brassérie 11 Comté" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+    <table>
+      <tr>
+        <th>Paramètres</th>
+        <th>Unité</th>
+        <th>Valeurs</th>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>-</td>
+        <td>5.33</td>
+      </tr>
+      <tr>
+        <td>Solides totaux</td>
+        <td>g/L</td>
+        <td>69</td>
+      </tr>
+      <tr>
+        <td>Solides totaux volatils</td>
+        <td>g/L</td>
+        <td>47.1</td>
+      </tr>
+      <tr>
+        <td>Solides en suspensions</td>
+        <td>g/L</td>
+        <td>13.5</td>
+      </tr>
+      <tr>
+        <td>Solides en suspensions volatils</td>
+        <td>g/L</td>
+        <td>3.2</td>
+      </tr>
+      <tr>
+        <td>Carbone organique-fraction liquide</td>
+        <td>gC/kg</td>
+        <td>345</td>
+      </tr>
+      <tr>
+        <td>Azote organique-fraction liquide</td>
+        <td>gN/kg</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>Phosphore organique</td>
+        <td>g/kg</td>
+        <td>4.7</td>
+      </tr>
+      <tr>
+        <td>Na</td>
+        <td>g/kg</td>
+        <td>0.12</td>
+      </tr>
+      <tr>
+        <td>Fe</td>
+        <td>g/kg</td>
+        <td>0.02</td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>g/kg</td>
+        <td>7.3</td>
+      </tr>
+      <tr>
+        <td>Ca</td>
+        <td>g/kg</td>
+        <td>0.2</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>g/kg</td>
+        <td>1.3</td>
+      </tr>
+      <tr>
+        <td>Glucose</td>
+        <td>g/kg</td>
+        <td>0.96</td>
+      </tr>
+      <tr>
+        <td>Fructose</td>
+        <td>g/kg</td>
+        <td>0.38</td>
+      </tr>
+      <tr>
+        <td>Lactose</td>
+        <td>g/kg</td>
+        <td>0.65</td>
+      </tr>
+      <tr>
+        <td>Sucrose</td>
+        <td>g/kg</td>
+        <td>0.15</td>
+      </tr>
+      <tr>
+        <td>Galactose</td>
+        <td>g/kg</td>
+        <td>0.3</td>
+      </tr>
+      <tr>
+        <td>Xylose</td>
+        <td>g/kg</td>
+        <td>0.7</td>
+      </tr>
+      <tr>
+        <td>Tréhalose</td>
+        <td>g/kg</td>
+        <td>1.3</td>
+      </tr>
+    </table>
+  </div>
+    <!-- création du contenu de la sidebar de MIELERIE KING --> 
+    <div id="sidebar5">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">MIELLERIE KING</h1>
+      <p style="text-align: justify; line-height: 1.2;"> MIELLERIE KING est une entreprise
+         située dans le Centre-du-Québec. Elle se spécialise dans la production de miel 
+         de terroir unique et savoureux. Elle propose des
+          produits de qualité soigneusement élaborés à partir de miels purs et non 
+          pasteurisés, tels que des caramels, sauces et alcools à base de miel.
+          <a href="https://www.miellerieking.com/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES EAUX USÉES DE LA MIELLERIE KING</p>
+        <img src="imageinternet\honeywastewater.png" alt="Eau usée de miellerie" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+<table>
+        <tr>
+          <th>Paramètres</th>
+          <th>Unité</th>
+          <th>Valeurs</th>
+        </tr>
+        <tr>
+          <td>pH</td>
+          <td>-</td>
+          <td>5.62</td>
+        </tr>
+        <tr>
+          <td>Solides totaux</td>
+          <td>g/L</td>
+          <td>1.6</td>
+        </tr>
+        <tr>
+          <td>Solides totaux volatils</td>
+          <td>g/L</td>
+          <td>0.86</td>
+        </tr>
+        <tr>
+          <td>Solides en suspensions</td>
+          <td>g/L</td>
+          <td>1.08</td>
+        </tr>
+        <tr>
+          <td>Solides en suspensions volatils</td>
+          <td>g/L</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>Carbone organique-fraction liquide</td>
+          <td>gC/kg</td>
+          <td>105</td>
+        </tr>
+        <tr>
+          <td>Azote organique-fraction liquide</td>
+          <td>gN/kg</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Phosphore organique</td>
+          <td>g/kg</td>
+          <td>6.5</td>
+        </tr>
+        <tr>
+          <td>Na</td>
+          <td>g/kg</td>
+          <td>4.9</td>
+        </tr>
+        <tr>
+          <td>Fe</td>
+          <td>g/kg</td>
+          <td>0.23</td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td>g/kg</td>
+          <td>1.9</td>
+        </tr>
+        <tr>
+          <td>Ca</td>
+          <td>g/kg</td>
+          <td>8.1</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>g/kg</td>
+          <td>2.1</td>
+        </tr>
+        <tr>
+          <td>Glucose</td>
+          <td>g/kg</td>
+          <td>0.12</td>
+        </tr>
+        <tr>
+          <td>Fructose</td>
+          <td>g/kg</td>
+          <td>0.025</td>
+        </tr>
+        <tr>
+          <td>Lactose</td>
+          <td>g/kg</td>
+          <td>0.005</td>
+        </tr>
+        <tr>
+          <td>Sucrose</td>
+          <td>g/kg</td>
+          <td>0.015</td>
+        </tr>
+        <tr>
+          <td>Galactose</td>
+          <td>g/kg</td>
+          <td>0.025</td>
+        </tr>
+        <tr>
+          <td>Xylose</td>
+          <td>g/kg</td>
+          <td>0.005</td>
+        </tr>
+        <tr>
+          <td>Tréhalose	</td>
+          <td>g/kg</td>
+          <td>0.005</td>
+        </tr>
+        <tr>
+          <td>Solides totaux</td>
+          <td>g/L</td>
+          <td>49.7</td>
+        </tr>
+        <tr>
+          <td>Solides totaux volatiles</td>
+          <td>g/L</td>
+          <td>39.88</td>
+        </tr>
+        <tr>
+          <td>Matières en suspension</td>
+          <td>g/L</td>
+          <td>24.65</td>
+        </tr>
+        <tr>
+          <td>Matières en suspension volatile	</td>
+          <td>g/L</td>
+          <td>16.79</td>
+        </tr>
+      </table>
+    </div>
+    <!-- création du contenu de la sidebar de LOOP MISSION --> 
+    <div id="sidebar6">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">LOOP MISSION</h1>
+      <p style="text-align: justify; line-height: 1.2;"> LOOP MISSION est 
+        un projet d'économie circulaire qui vise à réduire le gaspillage alimentaire 
+        en requalifiant les exclus de l'industrie alimentaire.
+          <a href="https://loopmission.com/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES RÉSIDUS D'AGRUMES DE LOOP MISSION </p>
+        <img src="imageadama\cleanup\Image3.jpg" alt="résidus d'agrume" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+        <p></p>
+        <table>
+          <tr>
+            <th>Paramètre</th>
+            <th>Unité</th>
+            <th>Valeurs</th>
+          </tr>
+          <tr>
+            <td>Tonnage (agrumes)</td>
+            <td>T/an</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <th>Jus de pâte d’orange</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Glucose</td>
+            <td>g/L</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <td>Fructose</td>
+            <td>g/L</td>
+            <td>8.3</td>
+          </tr>
+          <tr>
+            <td>Saccharose</td>
+            <td>g/L</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>g/L</td>
+            <td>40.3</td>
+          </tr>
+          <tr>
+            <th>Jus de zeste d’orange</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Glucose</td>
+            <td>g/L</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Fructose</td>
+            <td>g/L</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Saccharose</td>
+            <td>g/L</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>g/L</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Échantillons</td>
+            <td>Taux de siccité (%)</td>
+            <td>Taux d’humidité (%)</td>
+          </tr>
+          <tr>
+            <td>Pâte d’orange obtenue après centrifugation</td>
+            <td>14.6</td>
+            <td>85.4</td>
+          </tr>
+          <tr>
+            <td>Concentré obtenu après broyage et centrifugation</td>
+            <td>18.8</td>
+            <td>81.2</td>
+          </tr>
+        </table>
+      </div>
+    <!-- création du contenu de la sidebar de VIRENTIA --> 
+    <div id="sidebar7">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">VIRENTIA</h1>
+      <p style="text-align: justify; line-height: 1.2;"> VIRENTIA est
+         une société de biotechnologie basée au Québec (Canada), qui 
+         se spécialise dans le développement et la production de composés 
+         à valeur ajoutée obtenus par un procédé d'extraction raffiné de Medicago 
+         sativa. Ces composés sont ensuite commercialisés sous forme de nutraceutiques, 
+         d'ingrédients spécialisés pour l'homme et les animaux de compagnie ; et d'actifs phytosanitaires. 
+          <a href="https://virentia.ca/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES RÉSIDUS DE LUZERNE DE VIRENTIA </p>
+        <img src="imageadama\cleanup\luzerne_macrofibre_cleanup.jpeg" alt="résidus de luzerne" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+<table>
+  <thead>
+    <tr>
+      <th>Paramètres</th>
+      <th>Unité</th>
+      <th>Gelée lavée</th>
+      <th>Gelée non lavée</th>
+      <th>Jus vert</th>
+      <th>Jus brun</th>
+      <th>Jus jaune</th>
+      <th>Macrofibre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Solides totaux</td>
+      <td>g/L</td>
+      <td>106.28</td>
+      <td>124.4</td>
+      <td>80.59</td>
+      <td>81.92</td>
+      <td>17.78</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <td>Solides totaux volatiles</td>
+      <td>g/L</td>
+      <td>3.72</td>
+      <td>11.3</td>
+      <td>17.72</td>
+      <td>16.15</td>
+      <td>3.79</td>
+      <td>0.017</td>
+    </tr>
+    <tr>
+      <td>Matières en suspension</td>
+      <td>g/L</td>
+      <td>101.297</td>
+      <td>99.082</td>
+      <td>22.987</td>
+      <td>13.39</td>
+      <td>0.845</td>
+      <td>0.109</td>
+    </tr>
+    <tr>
+      <td>Matières en suspension volatiles</td>
+      <td>g/L</td>
+      <td>1.84</td>
+      <td>3.903</td>
+      <td>0.95</td>
+      <td>0.913</td>
+      <td>0.083</td>
+      <td>0.011</td>
+    </tr>
+    <tr>
+      <td>Ca</td>
+      <td>mg/kg</td>
+      <td>60</td>
+      <td>14</td>
+      <td>250</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fe</td>
+      <td>mg/kg</td>
+      <td>290</td>
+      <td>0.03</td>
+      <td>0.83</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>K</td>
+      <td>mg/kg</td>
+      <td>120</td>
+      <td>28</td>
+      <td>500</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mg</td>
+      <td>mg/kg</td>
+      <td>11</td>
+      <td>3</td>
+      <td>56</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Na</td>
+      <td>mg/kg</td>
+      <td>3.9</td>
+      <td>7.8</td>
+      <td>7.8</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>P</td>
+      <td>mg/kg</td>
+      <td>10</td>
+      <td>2.8</td>
+      <td>52</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td>mg/kg</td>
+      <td>10</td>
+      <td>2.3</td>
+      <td>42</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Macrofibre/Luzerne</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cellulose</td>
+      <td>29.2%</td>
+    </tr>
+    <tr>
+      <td>Hémicellulose</td>
+      <td>14.6%</td>
+    </tr>
+    <tr>
+      <td>Lignine</td>
+      <td>30.6%</td>
+    </tr>
+    <tr>
+      <td>Extractibles</td>
+      <td>25.6%</td>
+    </tr>
+    <tr>
+      <td>Taux de siccité</td>
+      <td>26.59%</td>
+    </tr>
+    <tr>
+      <td>Taux d’humidité</td>
+      <td>73.4%</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Macrofibre</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cellulose</td>
+      <td>31.3%</td>
+    </tr>
+    <tr>
+      <td>Hémicellulose</td>
+      <td>11.3%</td>
+    </tr>
+    <tr>
+      <td>Lignine</td>
+      <td>28.4%</td>
+    </tr>
+    <tr>
+      <td>Extractibles</td>
+      <td>29.1%</td>
+    </tr>
+    <tr>
+      <td>Taux de siccité</td>
+      <td>31.3%</td>
+    </tr>
+    <tr>
+      <td>Taux d’humidité</td>
+      <td>68.7%</td>
+    </tr>
+  </table>
+</div>
+    <!-- création du contenu de la sidebar de ROTHSAY OIL --> 
+    <div id="sidebar8">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">ROTHSAY OIL</h1>
+      <p style="text-align: justify; line-height: 1.2;"> ROTHSAY OIL est une division de Darling International Canada Inc.
+        Darling Ingredients propose des services et des équipements de collecte sûrs aux restaurants, institutions, etc.
+          <a href="https://www.darlingii.ca/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES HUILES USAGÉES DE ROTHSAY OIL </p>
+        <img src="imageinternet\wastecookingoil1.jpg" alt="Huiles usagées" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+      <p></p>
+      <table>
+        <tr>
+          <th>Paramètre</th>
+          <th>Unité</th>
+          <th>Valeur</th>
+        </tr>
+        <tr>
+          <td>Tonnage</td>
+          <td>T/an</td>
+          <td>60000</td>
+        </tr>
+        <tr>
+          <td>pH</td>
+          <td>-</td>
+          <td>8.27</td>
+        </tr>
+        <tr>
+          <td>Acide gras libre</td>
+          <td>%</td>
+          <td>4.88</td>
+        </tr>
+        <tr>
+          <td>Humidité</td>
+          <td>% w/w</td>
+          <td>14</td>
+        </tr>
+        <tr>
+          <td>Densité</td>
+          <td>g/cm3</td>
+          <td>0.87</td>
+        </tr>
+        <tr>
+          <td>Triglycerides</td>
+          <td>g/L</td>
+          <td>46.91</td>
+        </tr>
+        <tr>
+          <td>Diglycerides</td>
+          <td>g/L</td>
+          <td>13.15</td>
+        </tr>
+        <tr>
+          <td>Monoglycerides</td>
+          <td>g/L</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>Acide palmitique</td>
+          <td>mg/L</td>
+          <td>800</td>
+        </tr>
+        <tr>
+          <td>Acide stéarique</td>
+          <td>mg/L</td>
+          <td>400</td>
+        </tr>
+        <tr>
+          <td>Acide oléique</td>
+          <td>mg/L</td>
+          <td>1400</td>
+        </tr>
+        <tr>
+          <td>Acide linolénique</td>
+          <td>mg/L</td>
+          <td>8000</td>
+        </tr>
+        <tr>
+          <td>Acide linoléique</td>
+          <td>mg/L</td>
+          <td>6900</td>
+        </tr>
+      </table>
+      </div>
+    <!-- création du contenu de la sidebar de GREEN OIL --> 
+    <div id="sidebar9">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">GREEN OIL Inc.</h1>
+      <p style="text-align: justify; line-height: 1.2;"> GREEN OIL Inc. (GOI) est une entreprise de recyclage d'huile de cuisson usagée qu'elle transforme en
+        matière première précieuse pour de l'énergie renouvelable.
+          <a href="https://www.greenoilinc.com/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES HUILES USAGÉES DE GREEN OIL Inc.</p>
+        <img src="imageinternet\wastecookingoil2.jpg" alt="Huiles usagées" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+    <table>
+      <tr>
+        <th>Paramètre</th>
+        <th>Unité</th>
+        <th>Valeur</th>
+      </tr>
+      <tr>
+        <td>Tonnage</td>
+        <td>T/an</td>
+        <td>60000</td>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>-</td>
+        <td>4.57</td>
+      </tr>
+      <tr>
+        <td>Acide gras libre</td>
+        <td>%</td>
+        <td>4.51</td>
+      </tr>
+      <tr>
+        <td>Humidité</td>
+        <td>% w/w</td>
+        <td>7.32</td>
+      </tr>
+      <tr>
+        <td>Densité</td>
+        <td>g/cm3</td>
+        <td>0.9</td>
+      </tr>
+      <tr>
+        <td>Triglycerides</td>
+        <td>g/L</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>Diglycerides</td>
+        <td>g/L</td>
+        <td>0.78</td>
+      </tr>
+      <tr>
+        <td>Monoglycerides</td>
+        <td>g/L</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>Acide palmitique</td>
+        <td>mg/L</td>
+        <td>600</td>
+      </tr>
+      <tr>
+        <td>Acide stéarique</td>
+        <td>mg/L</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>Acide oléique</td>
+        <td>mg/L</td>
+        <td>2600</td>
+      </tr>
+      <tr>
+        <td>Acide linolénique</td>
+        <td>mg/L</td>
+        <td>4100</td>
+      </tr>
+      <tr>
+        <td>Acide linoléique</td>
+        <td>mg/L</td>
+        <td>1200</td>
+      </tr>
+    </table>
+  </div>
+    <!-- création du contenu de la sidebar de BIOCARDEL --> 
+    <div id="sidebar10">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">BIOCARDEL</h1>
+      <p style="text-align: justify; line-height: 1.2;"> BIOCARDEL est 
+        une entreprise canadienne qui se concentre sur la production de biomasse
+         forestière et sur l'innovation dans la transformation de la biomasse en 
+         produits à valeur ajoutée. L'entreprise possède des installations de 
+         production de granules de bois, de briquettes de bois, de biocharbon et 
+         de bois de chauffage. Elle travaille également sur le développement de nouveaux 
+         produits et technologies pour la transformation de la biomasse en produits chimiques, 
+         en biocarburants et en produits chimiques biosourcés. Biocardel se concentre sur 
+         la production d'une biomasse forestière durable et travaille en partenariat avec 
+         des propriétaires forestiers et des communautés locales pour assurer une gestion 
+         forestière responsable et une utilisation efficace des ressources naturelles.
+          <a href="">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LE GLYCEROL DE BIOCARDEL </p>
+        <img src="imageinternet\wastecookingoil3.jpg" alt="Glycerol" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+      <table>
+        <tr>
+          <th>Paramètre</th>
+          <th>Unité</th>
+          <th>Valeur</th>
+        </tr>
+        <tr>
+          <td>Tonnage</td>
+          <td>g/L</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td>Densité</td>
+          <td>g/L</td>
+          <td>877</td>
+        </tr>
+        <tr>
+          <td>Glycérol</td>
+          <td>g/L</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>Teneur en eau</td>
+          <td>g/L</td>
+          <td>219.25</td>
+        </tr>
+        <tr>
+          <td>Méthanol</td>
+          <td>g/L</td>
+          <td>263.1</td>
+        </tr>
+        <tr>
+          <td>Potassium</td>
+          <td>g/L</td>
+          <td>0.2</td>
+        </tr>
+        <tr>
+          <td>Phosphore</td>
+          <td>g/L</td>
+          <td>0.39</td>
+        </tr>
+        <tr>
+          <td>pH</td>
+          <td>-</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Calcium</td>
+          <td>mg/L</td>
+          <td>77</td>
+        </tr>
+        <tr>
+          <td>Fer</td>
+          <td>mg/L</td>
+          <td>199</td>
+        </tr>
+        <tr>
+          <td>Magnésium</td>
+          <td>mg/L</td>
+          <td>53</td>
+        </tr>
+        <tr>
+          <td>Sodium</td>
+          <td>mg/L</td>
+          <td>12800</td>
+        </tr>
+        <tr>
+          <td>Phosphore</td>
+          <td>mg/L</td>
+          <td>0.18</td>
+        </tr>
+        <tr>
+          <td>Soufre</td>
+          <td>mg/L</td>
+          <td>3200</td>
+        </tr>
+      </table>
+      </div>
+    <!-- création du contenu de la sidebar de APCQ --> 
+    <div id="sidebar11">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">APCQ</h1>
+      <p style="text-align: justify; line-height: 1.2;"> L'Association 
+        des producteurs de canneberge du Québec, est une organisation qui représente 
+        les producteurs de canneberges du Québec depuis sa création en 1987. Elle 
+        travaille à promouvoir et à soutenir l'industrie de la canneberge au Québec 
+        en fournissant des services et des informations aux producteurs, ainsi qu'en 
+        collaborant avec les gouvernements, les chercheurs et d'autres intervenants de 
+        l'industrie pour améliorer la production et la qualité des canneberges. 
+        L'APCQ organise également des activités de promotion et de sensibilisation 
+        du public à la canneberge, et elle travaille à développer de nouveaux marchés 
+        pour les producteurs de canneberges du Québec.
+          <a href="http://www.notrecanneberge.com/Home">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES RÉSIDUS DE CANNEBERGE </p>
+        <img src="imageinternet\cranberrywaste.jpg" alt="résidus de canneberges" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+      <table>
+        <tr>
+          <th>Paramètre</th>
+          <th>Unité</th>
+          <th>Valeur</th>
+        </tr>
+        <tr>
+          <td>Tonnage</td>
+          <td>T/an</td>
+          <td>23000</td>
+        </tr>
+        <tr>
+          <td>Extractibles</td>
+          <td>%</td>
+          <td>23.9</td>
+        </tr>
+        <tr>
+          <td>Cellulose</td>
+          <td>%</td>
+          <td>22.3</td>
+        </tr>
+        <tr>
+          <td>Hemicellulose</td>
+          <td>%</td>
+          <td>9.9</td>
+        </tr>
+        <tr>
+          <td>Lignine</td>
+          <td>%</td>
+          <td>43.9</td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>%</td>
+          <td>1.2</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>%</td>
+          <td>46.8</td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td>%</td>
+          <td>4.4</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>%</td>
+          <td>0.1</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+    <!-- création du contenu de la sidebar de SEMICAN --> 
+    <div id="sidebar12">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">SEMICAN</h1>
+      <p style="text-align: justify; line-height: 1.2;"> SEMICAN est une entreprise 
+        canadienne fondée en 1982 qui a commencé par se concentrer sur le conditionnement 
+        des semences, puis s'est diversifiée pour produire et vendre des semences de 
+        céréales, de fourrage et de soja. Son Centre de recherche se 
+        concentre sur le développement de variétés performantes adaptées 
+        aux conditions climatiques de l'Est du Canada. L'entreprise fournit des 
+        semences à une vaste région s'étendant de l'Ontario aux Maritimes, ainsi qu'au nord 
+        des États-Unis. En outre, elle opère sur le marché mondial avec des produits d'alimentation 
+        animale, notamment les aliments pour chevaux et les aliments pour oiseaux.
+          <a href="https://www.semican.ca/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LES RÉSIDUS D'ORGE </p>
+        <img src="imageinternet\residusdorge.jpg" alt="résidus d'orge" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+    <table>
+      <tr>
+        <th>Paramètre</th>
+        <th>Unité</th>
+        <th>Valeur</th>
+      </tr>
+      <tr>
+        <td>Extractible</td>
+        <td>%</td>
+        <td>39.1</td>
+      </tr>
+      <tr>
+        <td>Cellulose</td>
+        <td>%</td>
+        <td>11.5</td>
+      </tr>
+      <tr>
+        <td>Hémicellulose</td>
+        <td>%</td>
+        <td>34.6</td>
+      </tr>
+      <tr>
+        <td>Lignine</td>
+        <td>%</td>
+        <td>14.8</td>
+      </tr>
+    </table>
+  </div>
+
+  
+    <!-- création du contenu de la sidebar de SEMICAN --> 
+    <div id="sidebar13">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">FROMAGERIE LES RIVIÈRES</h1>
+      <p style="text-align: justify; line-height: 1.2;"> FRMAGERIE LES RIVIÈRES est une entreprise  québéquoise 
+        de fabrication et de vente de fromage en grains, de pâte molle et de cheddar frais du jour en plusieurs saveurs.
+          <a href="https://www.facebook.com/fromagerielesrivieres/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LE LACTOSERUM </p>
+        <img src="imageinternet\fromagerie-les-rivières.jpeg" alt="résidus d'orge" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+   
+  <table>
+    <thead>
+      <tr>
+        <th>Paramètres</th>
+        <th>Unités</th>
+        <th>Lactosérum homogène</th>
+        <th>Lactosérum décanté</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rejet annuel</td>
+        <td>L</td>
+        <td>35,000</td>
+        <td>35,000</td>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>--</td>
+        <td>4,28</td>
+        <td>4,44</td>
+      </tr>
+      <tr>
+        <td>MES</td>
+        <td>g/L</td>
+        <td>2,60</td>
+        <td>5,38</td>
+      </tr>
+      <tr>
+        <td>MES volatils</td>
+        <td>g/L</td>
+        <td>2,46</td>
+        <td>5,00</td>
+      </tr>
+      <tr>
+        <td>ST</td>
+        <td>g/L</td>
+        <td>62,0</td>
+        <td>34,8</td>
+      </tr>
+      <tr>
+        <td>ST volatils</td>
+        <td>g/L</td>
+        <td>57,6</td>
+        <td>30,0</td>
+      </tr>
+      <tr>
+        <td>COT</td>
+        <td>g/kg</td>
+        <td>21,3</td>
+        <td>17,2</td>
+      </tr>
+      <tr>
+        <td>Ntot</td>
+        <td>g/kg</td>
+        <td>1,06</td>
+        <td>1,12</td>
+      </tr>
+      <tr>
+        <td>Al</td>
+        <td>mg/kg</td>
+        <td>0,878</td>
+        <td>1,08</td>
+      </tr>
+      <tr>
+        <td>Ca</td>
+        <td>mg/kg</td>
+        <td>349</td>
+        <td>375</td>
+      </tr>
+      <tr>
+        <td>Cu</td>
+        <td>mg/kg</td>
+        <td>&lt; 0,3</td>
+        <td>&lt; 0,3</td>
+      </tr>
+      <tr>
+        <td>Fe</td>
+        <td>mg/kg</td>
+        <td>&lt; 0,3</td>
+        <td>0,324</td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>mg/kg</td>
+        <td>1 579</td>
+        <td>1 681</td>
+      </tr>
+      <tr>
+        <td>Mg</td>
+        <td>mg/kg</td>
+        <td>73,4</td>
+        <td>80,8</td>
+      </tr>
+      <tr>
+        <td>Mn</td>
+        <td>mg/kg</td>
+        <td>&lt; 0,2</td>
+        <td>&lt; 0,2</td>
+      </tr>
+      <tr>
+        <td>Na</td>
+        <td>mg/kg</td>
+        <td>304</td>
+        <td>319</td>
+      </tr>
+      <tr>
+        <td>Ptot</td>
+        <td>mg/kg</td>
+        <td>409</td>
+        <td>475</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>mg/kg</td>
+        <td>130</td>
+        <td>140</td>
+      </tr>
+      <tr>
+        <td>Zn</td>
+        <td>mg/kg</td>
+        <td>0,475</td>
+        <td>0,958</td>
+      </tr>
+      <tr>
+        <td>Glucose/galactose</td>
+        <td>g/kg</td>
+        <td>&lt; 0,5</td>
+        <td>&lt; 0,5</td>
+      </tr>
+      <tr>
+        <td>Fructose</td>
+        <td>g/kg</td>
+        <td>&lt; 0,5</td>
+        <td>&lt; 0,5</td>
+      </tr>
+      <tr>
+        <td>Lactose</td>
+        <td>g/kg</td>
+        <td>46,7</td>
+        <td>&lt; 0,5</td>
+      </tr>
+      <tr>
+        <td>Sucrose</td>
+        <td>g/kg</td>
+        <td>&lt; 0,5</td>
+        <td>&lt; 0,5</td>
+      </tr>
+      <tr>
+        <td>Xylose</td>
+        <td>g/kg</td>
+        <td>&lt; 0,5</td>
+        <td>&lt; 0,5</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+
+
+
+    <!-- création du contenu de la sidebar de Maison Riviera --> 
+    <div id="sidebar14">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">MAISON RIVIERA</h1>
+      <p style="text-align: justify; line-height: 1.2;"> MAISON RIVIERA est une entreprise laitière centenaire basé à Sorel-Tracy. Elle offre à sa clientèle 
+        divers produits laitiers et des produits vegetaliens.
+          <a href="https://riviera1920.com/fr/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> LE LACTOSERUM </p>
+        <img src="imageinternet\Maison-riviera.jpeg" alt="résidus d'orge" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p>
+   
+<table>
+  <thead>
+    <tr>
+      <th>Paramètres</th>
+      <th>Unités</th>
+      <th>Rejet avoine</th>
+      <th>Lactosérum yogourt grec</th>
+      <th>Coupure Kéfir</th>
+      <th>Eaux blanches</th>
+      <th>Lactosérum concentré</th>
+      <th>Lactosérum chèvre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rejet annuel</td>
+      <td>(kg)</td>
+      <td>20,800</td>
+      <td>754,000</td>
+      <td>52,000</td>
+      <td>--</td>
+      <td>13,000,000</td>
+      <td>130,000</td>
+    </tr>
+    <tr>
+      <td>pH</td>
+      <td>--</td>
+      <td>4,88</td>
+      <td>4,20</td>
+      <td>4,04</td>
+      <td>3,70</td>
+      <td>4,93</td>
+      <td>4,12</td>
+    </tr>
+    <tr>
+      <td>MES</td>
+      <td>g/L</td>
+      <td>39,9</td>
+      <td>0,516</td>
+      <td>54,1</td>
+      <td>15,1</td>
+      <td>4,20</td>
+      <td>1,05</td>
+    </tr>
+    <tr>
+      <td>MES volatils</td>
+      <td>g/L</td>
+      <td>13,4</td>
+      <td>0,420</td>
+      <td>51,5</td>
+      <td>14,6</td>
+      <td>3,84</td>
+      <td>0,872</td>
+    </tr>
+    <tr>
+      <td>ST</td>
+      <td>g/L</td>
+      <td>113</td>
+      <td>38,8</td>
+      <td>89,2</td>
+      <td>49,2</td>
+      <td>215</td>
+      <td>43,6</td>
+    </tr>
+    <tr>
+      <td>ST volatils</td>
+      <td>g/L</td>
+      <td>85,6</td>
+      <td>32,8</td>
+      <td>85,2</td>
+      <td>45,6</td>
+      <td>195</td>
+      <td>36,4</td>
+    </tr>
+    <tr>
+      <td>COT</td>
+      <td>g/kg</td>
+      <td>15,5</td>
+      <td>15,8</td>
+      <td>20,3</td>
+      <td>20,0</td>
+      <td>80,7</td>
+      <td>15,2</td>
+    </tr>
+    <tr>
+      <td>Ntot</td>
+      <td>g/kg</td>
+      <td>3,93</td>
+      <td>0,327</td>
+      <td>1,80</td>
+      <td>1,10</td>
+      <td>3,57</td>
+      <td>1,00</td>
+    </tr>
+    <tr>
+      <td>Al</td>
+      <td>mg/kg</td>
+      <td>6,74</td>
+      <td>0,815</td>
+      <td>1,98</td>
+      <td>0,363</td>
+      <td>0,795</td>
+      <td>1,02</td>
+    </tr>
+    <tr>
+      <td>Ca</td>
+      <td>mg/kg</td>
+      <td>8,673</td>
+      <td>1,184</td>
+      <td>1,002</td>
+      <td>345</td>
+      <td>1,340</td>
+      <td>879</td>
+    </tr>
+    <tr>
+      <td>Cu</td>
+      <td>mg/kg</td>
+      <td>0,758</td>
+      <td>&lt; 0,3</td>
+      <td>0,567</td>
+      <td>&lt; 0,3</td>
+      <td>&lt; 0,3</td>
+      <td>&lt; 0,3</td>
+    </tr>
+    <tr>
+      <td>Fe</td>
+      <td>mg/kg</td>
+      <td>13,9</td>
+      <td>&lt; 0,3</td>
+      <td>3,50</td>
+      <td>&lt; 0,3</td>
+      <td>&lt; 0,3</td>
+      <td>4,63</td>
+    </tr>
+    <tr>
+      <td>K</td>
+      <td>mg/kg</td>
+      <td>332</td>
+      <td>1,233</td>
+      <td>639</td>
+      <td>1,211</td>
+      <td>5,274</td>
+      <td>1,625</td>
+    </tr>
+    <tr>
+      <td>Mg</td>
+      <td>mg/kg</td>
+      <td>125</td>
+      <td>88,0</td>
+      <td>73,3</td>
+      <td>61,1</td>
+      <td>251</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <td>Mn</td>
+      <td>mg/kg</td>
+      <td>2,64</td>
+      <td>0,446</td>
+      <td>1,55</td>
+      <td>&lt; 0,2</td>
+      <td>0,637</td>
+      <td>&lt; 0,2</td>
+    </tr>
+    <tr>
+      <td>Na</td>
+      <td>mg/kg</td>
+      <td>656</td>
+      <td>251</td>
+      <td>130</td>
+      <td>452</td>
+      <td>1,170</td>
+      <td>264</td>
+    </tr>
+    <tr>
+      <td>Ptot</td>
+      <td>mg/kg</td>
+      <td>5,172</td>
+      <td>626</td>
+      <td>730</td>
+      <td>392</td>
+      <td>1,364</td>
+      <td>678</td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td>mg/kg</td>
+      <td>400</td>
+      <td>55,9</td>
+      <td>150</td>
+      <td>115</td>
+      <td>403</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <td>Zn</td>
+      <td>mg/kg</td>
+      <td>4,23</td>
+      <td>5,12</td>
+      <td>2,67</td>
+      <td>0,651</td>
+      <td>0,501</td>
+      <td>2,42</td>
+    </tr>
+    <tr>
+      <td>Glucose/galactose</td>
+      <td>g/kg</td>
+      <td>&lt; 0,5</td>
+      <td>30,1</td>
+      <td>9,08</td>
+      <td>1,69</td>
+      <td>1,32</td>
+      <td>21,0</td>
+    </tr>
+    <tr>
+      <td>Fructose</td>
+      <td>g/kg</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>5,08</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+    </tr>
+    <tr>
+      <td>Lactose</td>
+      <td>g/kg</td>
+      <td>9,82</td>
+      <td>&lt; 0,5</td>
+      <td>1,07</td>
+      <td>26,8</td>
+      <td>27,2</td>
+      <td>&lt; 0,5</td>
+    </tr>
+    <tr>
+      <td>Sucrose</td>
+      <td>g/kg</td>
+      <td>6,48</td>
+      <td>&lt; 0,5</td>
+      <td>0,692</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+    </tr>
+    <tr>
+      <td>Xylose</td>
+      <td>g/kg</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+      <td>&lt; 0,5</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+ <!-- création du contenu de la sidebar de PPAQ --> 
+    <div id="sidebar15">
+      <h1 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px ; font-weight: 800;">PPAQ</h1>
+      <p style="text-align: justify; line-height: 1.2;"> PPAQ (Producteurs et Productrices Acéricoles du Québec) regroupe les producteurs et Productrices
+        acéricole du Québec. Sa mission consiste à assurer la promotion des intérêts des acériculteurs et acéricultrices du Québec, développer et valoriser 
+        le plein potentiel de production et de vente des produits d’érable du Québec, et ce, en respectant les règles du développement durable. 
+          <a href="https://ppaq.ca/fr/">En savoir plus</a></p>
+      <p style="color:rgb(16, 119, 6); text-align: center; font-weight: 800;"> RESIDUES DE SIROP D'ÉRABLE </p>
+        <img src="imageinternet\sirop-ppaq.jpeg" alt="résidus d'orge" style="width:100% ; height: auto ; border-radius: 8px; border-color: black; border: 10px;">
+<p></p> 
+ <table>
+    <thead>
+      <tr>
+        <th>Paramètres</th>
+        <th>Unités</th>
+        <th>Sirop moisi</th>
+        <th>Sirop hydrocarbure</th>
+        <th>Sirop filant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rejet annuel</td>
+        <td>kg</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>--</td>
+        <td>6,32</td>
+        <td>6,43</td>
+        <td>5,15</td>
+      </tr>
+      <tr>
+        <td>COT</td>
+        <td>g/kg</td>
+        <td>353</td>
+        <td>384</td>
+        <td>474</td>
+      </tr>
+      <tr>
+        <td>Ntot</td>
+        <td>g/kg</td>
+        <td>0,102</td>
+        <td>0,061</td>
+        <td>0,378</td>
+      </tr>
+      <tr>
+        <td>Al</td>
+        <td>mg/kg</td>
+        <td>0,722</td>
+        <td>0,493</td>
+        <td>1,55</td>
+      </tr>
+      <tr>
+        <td>Ca</td>
+        <td>mg/kg</td>
+        <td>1,164</td>
+        <td>440</td>
+        <td>1,670</td>
+      </tr>
+      <tr>
+        <td>Cu</td>
+        <td>mg/kg</td>
+        <td>&lt; 0,3</td>
+        <td>&lt; 0,3</td>
+        <td>&lt; 0,3</td>
+      </tr>
+      <tr>
+        <td>Fe</td>
+        <td>mg/kg</td>
+        <td>0,394</td>
+        <td>0,396</td>
+        <td>1,72</td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>mg/kg</td>
+        <td>2,041</td>
+        <td>2,170</td>
+        <td>2,272</td>
+      </tr>
+      <tr>
+        <td>Mg</td>
+        <td>mg/kg</td>
+        <td>165</td>
+        <td>189</td>
+        <td>258</td>
+      </tr>
+      <tr>
+        <td>Mn</td>
+        <td>mg/kg</td>
+        <td>13,1</td>
+        <td>9,27</td>
+        <td>462</td>
+      </tr>
+      <tr>
+        <td>Na</td>
+        <td>mg/kg</td>
+        <td>25,7</td>
+        <td>27,1</td>
+        <td>61,8</td>
+      </tr>
+      <tr>
+        <td>Ptot</td>
+        <td>mg/kg</td>
+        <td>4,67</td>
+        <td>3,62</td>
+        <td>31,9</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>mg/kg</td>
+        <td>7,89</td>
+        <td>8,57</td>
+        <td>20,6</td>
+      </tr>
+      <tr>
+        <td>Zn</td>
+        <td>mg/kg</td>
+        <td>1,43</td>
+        <td>2,81</td>
+        <td>10,7</td>
+      </tr>
+      <tr>
+        <td>Glucose/galactose</td>
+        <td>g/kg</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+        <td>43,0</td>
+      </tr>
+      <tr>
+        <td>Fructose</td>
+        <td>g/kg</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+        <td>50,0</td>
+      </tr>
+      <tr>
+        <td>Lactose</td>
+        <td>g/kg</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+      </tr>
+      <tr>
+        <td>Sucrose</td>
+        <td>g/kg</td>
+        <td>641</td>
+        <td>675</td>
+        <td>531</td>
+      </tr>
+      <tr>
+        <td>Xylose</td>
+        <td>g/kg</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+        <td>&lt; 5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+ <!-- Fin de la création des div sidebar -->
+
+
+           <div id="map"  style="width:100%; height:80vh; margin: 0 0cm;"></div> 
+            <script src="leafletgithub\src\L.Control.Sidebar.js"></script>
+             <!-- Fin de la création des div sidebar --> 
+
+
+
+      <script> 
+            // création de la carte
+            var map = L.map('map');
+            // ajout des tuiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                minZoom: 8,
+                attribution: 'Map data &copy; OpenStreetMap contributors'
+            }).addTo(map);
+            // définition des limites
+            var southWest = L.latLng(44.035, -77.669); // coordonnées sud-ouest
+            var northEast = L.latLng(48.368, -67.893); // coordonnées nord-est
+            var bounds = L.latLngBounds(southWest, northEast); // limites de la carte
+            // affectation des limites à la carte
+            map.setMaxBounds(bounds);
+            // configuration de la vue de la carte
+            map.setView([46.1998153288181, -72.27754701711997], 8);
+            var activeSidebar = null ;
+
+            
+ // creation des marqueurs 
+
+            // Création du marqueur avec AwesomeMarker
+            var blueMarker = L.AwesomeMarkers.icon({
+              icon: 'info-circle',
+              markerColor: 'blue'
+            }); 
+
+            var orangeMarker = L.AwesomeMarkers.icon({
+              icon: 'info-circle',
+              markerColor: 'orange'
+            });
+
+            var greenMarker = L.AwesomeMarkers.icon({
+              icon: 'info-circle',
+              markerColor: 'green'
+            });
+
+            var grayMarker = L.AwesomeMarkers.icon({
+              icon: 'info-circle',
+              markerColor: 'gray'
+            });
+
+            var redMarker = L.AwesomeMarkers.icon({
+              icon: 'info-circle',
+              markerColor: 'red'
+            });
+
+            // creation du marker kruger
+            var sidebar1 = L.control.sidebar('sidebar1', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar1);  setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker1 = L.marker([46.32712853924076, -72.55789197099591],{icon: blueMarker}).addTo(map).on('click', function () {
+              if (activeSidebar) {
+              activeSidebar.hide();
+              };
+              sidebar1.show();
+              activeSidebar = sidebar1
+              marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker1.bindTooltip("KRUGER", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker1.closeTooltip();
+                    });
+ // creation du marker white birch paper
+ 
+            var sidebar2 = L.control.sidebar('sidebar2', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar2); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+
+ var marker2 = L.marker([46.824253294303276, -71.21528147291784],{icon: blueMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar2.show();
+                activeSidebar = sidebar2
+                marker2.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker2.bindTooltip("WHITE BIRCH PAPER", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker2.closeTooltip();
+                    });
+ // creation du marker AMD
+            var sidebar3 = L.control.sidebar('sidebar3', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar3); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker3 = L.marker([45.4014173503414, -73.51336444311102],{icon: greenMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar3.show();
+                activeSidebar = sidebar3
+                marker3.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker3.bindTooltip("AMD", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker3.closeTooltip();
+                    });
+ // creation du marker Brasserie 11 COMTE
+            var sidebar4 = L.control.sidebar('sidebar4', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar4); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker4 = L.marker([45.40973271759694, -71.63431552507997],{icon: greenMarker}).addTo(map).on('click', function () {
+                if (activeSidebar)  {
+                activeSidebar.hide();
+                };
+                sidebar4.show();
+                activeSidebar =  sidebar4
+                marker4.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker4.bindTooltip("BRASSERIE 11 COMTE", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker4.closeTooltip();
+                    });
+ // creation du marker MIELLERIE KING
+            var sidebar5 = L.control.sidebar('sidebar5', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar5); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker5 = L.marker([45.86026194254494, -72.06412611347719],{icon: greenMarker}).addTo(map).on('click', function () {
+                if (activeSidebar){
+                  activeSidebar.hide();
+                };
+                sidebar5.show();
+                activeSidebar =  sidebar5
+                marker5.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker5.bindTooltip("MIELLERIE KING", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker5.closeTooltip();
+                    });
+ // creation du marker LOOP MISSION
+            var sidebar6 = L.control.sidebar('sidebar6', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar6); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker6 = L.marker([45.54203799082499, -73.6167856103941],{icon: greenMarker}).addTo(map).on('click', function () {
+                if (activeSidebar){
+                  activeSidebar.hide();
+                };
+                sidebar6.show();
+                activeSidebar = sidebar6
+                marker6.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker6.bindTooltip("LOOP MISSION", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker6.closeTooltip();
+                    });
+ // creation du marker VIRENTIA
+            var sidebar7 = L.control.sidebar('sidebar7', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar7); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker7 = L.marker([46.37372845945292, -72.39400524705349],{icon: greenMarker}).addTo(map).on('click', function () {
+                if(activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar7.show();
+                activeSidebar = sidebar7
+                marker7.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker7.bindTooltip("VIRENTIA", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker7.closeTooltip();
+                    });
+ // creation du marker ROTHSAY OIL
+            var sidebar8 = L.control.sidebar('sidebar8', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar8); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker8 = L.marker([45.40581599807351, -73.5866791560598],{icon: orangeMarker}).addTo(map).on('click', function () {
+                if(activeSidebar) {
+                  activeSidebar.hide();
+                  };
+                  sidebar8.show();
+                  activeSidebar = sidebar8
+                  marker8.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker8.bindTooltip("ROTHSAY OIL", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker8.closeTooltip();
+                    });
+ // creation du marker GREEN OIL
+            var sidebar9 = L.control.sidebar('sidebar9', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar9); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker9 = L.marker([46.87895944286916, -71.19015101564432],{icon: orangeMarker}).addTo(map).on('click', function () {
+                if (activeSidebar)  {
+                  activeSidebar.hide();
+                  };
+                  sidebar9.show();
+                  activeSidebar = sidebar9
+                  marker9.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker9.bindTooltip("GREEN OIL", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker9.closeTooltip();
+                    });
+ // creation du marker BIOCARDEL
+            var sidebar10 = L.control.sidebar('sidebar10', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar10); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker10 = L.marker([45.663527266382346, -72.12376869858149],{icon: orangeMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar10.show();
+                activeSidebar = sidebar10
+                marker10.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker10.bindTooltip("BIOCARDEL OIL", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker10.closeTooltip();
+                    });
+ // creation du marker APCQ
+            var sidebar11 = L.control.sidebar('sidebar11', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar11); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker11 = L.marker([46.33329241781883, -71.81943948530345],{icon: redMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                  };
+                  sidebar11.show();
+                  activeSidebar =  sidebar11
+                  marker11.on('click', function(e) {
+                  var latlng = e.latlng;
+                  map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker11.bindTooltip("APCQ", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker11.closeTooltip();
+                    });
+ // creation du marker SEMICAN
+            var sidebar12 = L.control.sidebar('sidebar12', {
+              closeButton: true,
+              position: 'left'
+            });
+            map.addControl(sidebar12);
+            var marker12 = L.marker([46.22076887675749, -71.72478488097865],{icon: greenMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar12.show();
+                activeSidebar =  sidebar12
+                marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker12.bindTooltip("SEMICAN", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker12.closeTooltip();
+                    });
+
+ // creation du marker Fromagerie les rivières
+ var sidebar13 = L.control.sidebar('sidebar13', {
+              closeButton: true,
+              position: 'left'
+            });
+            map.addControl(sidebar13);
+            var marker13 = L.marker([46.850482222146624, -71.30897089392886],{icon: grayMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar13.show();
+                activeSidebar =  sidebar13
+                marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker13.bindTooltip("FROMAGÉRIE LES RIVIÈRES", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker13.closeTooltip();
+                    });
+
+ // creation du marker Maison Riviera
+ var sidebar14 = L.control.sidebar('sidebar14', {
+              closeButton: true,
+              position: 'left'
+            });
+            map.addControl(sidebar14);
+            var marker14 = L.marker([46.02692568897166, -73.07944325286167],{icon: grayMarker}).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar14.show();
+                activeSidebar =  sidebar14
+                marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker14.bindTooltip("MAISON RIVIÉRA", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker14.closeTooltip();
+                    });
+;
+
+ // creation du marker de PPAQ
+ var sidebar15 = L.control.sidebar('sidebar15', {
+              closeButton: true,
+              position: 'left'
+            });
+            map.addControl(sidebar15);
+            var marker15 = L.marker([45.54548984148034, -73.49095283263055],{icon: redMarker}).addTo(map)
+            .on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar15.show();
+                activeSidebar =  sidebar15
+                marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker15.bindTooltip("PPAQ", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker15.closeTooltip();
+                    });
+
+
+                // Créez des couches pour chaque catégorie
+                var categoryLayers = {
+                    'AGRO-ALIMENTAIRE': L.layerGroup(),
+                    'PAPETERIE': L.layerGroup(),
+                    'PRODUCTION AGRICOLE': L.layerGroup(),
+                    'INDUSTRIE LAITIÈRE': L.layerGroup(),
+                    'HUILERIE': L.layerGroup(),
+                    // Ajoutez d'autres catégories au besoin
+                };
+
+                // Ajoutez les marqueurs à leurs couches respectives
+                marker1.addTo(categoryLayers['PAPETERIE']);
+                marker2.addTo(categoryLayers['PAPETERIE']);
+                marker3.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker4.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker5.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker6.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker7.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker8.addTo(categoryLayers['HUILERIE']);
+                marker9.addTo(categoryLayers['HUILERIE']);
+                marker10.addTo(categoryLayers['HUILERIE']);
+                marker11.addTo(categoryLayers['PRODUCTION AGRICOLE']);
+                marker12.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker13.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
+                marker14.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
+                marker15.addTo(categoryLayers['PRODUCTION AGRICOLE']);
+
+                // Créez un panneau de contrôle pour activer/désactiver les couches
+                L.control.layers(null, categoryLayers, { collapsed: false }).addTo(map);
+
+                // Fonction pour cocher toutes les catégories
+                function selectAllCategories() {
+                    for (var category in categoryLayers) {
+                        map.addLayer(categoryLayers[category]);
+                    }
+                }
+
+                // Cochez toutes les catégories dès le chargement de la carte
+                selectAllCategories();
+
+ // partie de contrôle de la barre laterale
+            sidebar.on('show', function () {
+                console.log('Sidebar will be visible.');
+            });
+            sidebar.on('shown', function () {
+                console.log('Sidebar is visible.');
+            });
+            sidebar.on('hide', function () {
+                console.log('Sidebar will be hidden.');
+            });
+            sidebar.on('hidden', function () {
+                console.log('Sidebar is hidden.');
+            });
+            //How to close the sidebar of a leaflet map when I click on another marker?
+            L.DomEvent.on(sidebar1.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar2.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar3.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar4.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar5.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar6.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar7.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar8.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar9.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar10.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar11.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar12.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar13.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar14.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+            L.DomEvent.on(sidebar15.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
+        </script>
+        </div>
+        </div>
+    </section><!-- End Carte interactive Section -->
+ <!-- ======= Les voies de valorisation potentielles ======= -->
+ <section id="voies" class="voies" data-aos="fade-up">
+      <div class="section-header">
+      <h2>Valorisations potentielles</h2> 
+      <div class="container-voies" > 
+    <table style="line-height: 115%;">
+      <thead>
+        <tr>
+          <th colspan="2">Procédés-Bioproduits</th>
+          <th>Description du procédé</th>
+          <th>Intrants possibles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="6" style="text-align: left;">Fermentation aérobie</th>
+          <td>Biopolymère</td>
+          <td>Production de Polyhydroxyalcanoate par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire, résidus humides d’agrumes, glycérol, huiles usagées de cuisson</td>
+        </tr>
+        <tr>
+          
+          <td>Biopesticide</td>
+          <td>Production de biopesticide (endotoxine et spores viables) par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire, résidus humides de Luzerne</td>
+        </tr>
+
+        <tr>
+          
+          <td>Bio détergent</td>
+          <td>Production d’enzymes (protéase, amylase, lipase) et de biosurfactants (lichénysine, surfactine, iturine) par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire, huiles usagées de cuisson</td>
+        </tr>
+        <tr>
+          
+          <td>Transestérification-biodiesel</td>
+          <td>Production de lipide ou de corps gras par fermentation microbienne et Transformation de corps gras en ester par transestérification</td>
+          <td>Huiles usagées de cuisson, Glycérol, Boues secondaires municipales</td>
+        </tr>
+        <tr>
+          
+          <td>Enzymes lignolytique et hemicellulolytiques</td>
+          <td>Production de laccase, cellulase et de xylanase par fermentation microbienne en bioréacteur</td>
+          <td>Résidu sec d’orge, résidu sec de canneberges, résidu sec de luzerne</td>
+        </tr>
+        <tr>
+          
+          <td>Biofertilisant</td>
+          <td>Production de métabolites pour le biocontrôle et le traitement de phytopathologies par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire</td>
+        </tr>
+        <tr>
+ 
+        <tr>
+          <th rowspan="2" style="text-align: left;">Fermentation anaérobie</th>
+          <td>Bio-hydrogène</td>
+          <td>Production d’hydrogène par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire, résidu sec d’orge, résidu sec de canneberges, résidu sec de luzerne, résidus humides d’agrumes, glycérol</td>
+        </tr>
+        <tr>
+          
+          <td>Bioéthanol, butanol, isopropanol</td>
+          <td>Production de bioéthanol par fermentation microbienne des sucres réducteurs en bioréacteur</td>
+          <td>Résidus humides d’agrumes, Eaux usées de brasseries</td>
+        </tr> 
+        <tr>
+          <th style="text-align: left;">Fermentation aérobie-anaérobie</th>
+          <td>Bioremédiation</td>
+          <td>Production d’enzymes et de cultures dégradant les hydrocarbures par fermentation microbienne en bioréacteur</td>
+          <td>Boues secondaires de papèterie, boues secondaires municipales, eaux usées d’industries agroalimentaire</td>
+        </tr>
+        <th style="text-align: left;">Hydrolyse enzymatique</th>
+          <td>Bioéthanol cellulosique</td>
+          <td>Utilisation d’enzymes capables de libérer et d’hydrolyser la cellulose en glucose. Ce dernier peut servir à la fermentation anaérobique pour la production d’éthanol</td>
+          <td>Résidu sec d’orge, résidu sec de canneberge, résidu sec de luzerne</td>
+        </tr> 
+        <tr>
+          <th style="text-align: left;">Pyrolyse</th>
+          <td>Production d'acide acétique</td>
+          <td>Décomposition d’une substance organique solide comme la biomasse végétale sous l’effet de la chaleur et en déficit d’air, en liquide (biohuile), phase aqueuse (riche en acide acétique) solide (biocharbon) et gaz.</td>
+          <td>Résidu sec d’orge, résidu sec de canneberges, résidu sec de luzerne</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+</section><!-- End Our Team Section -->
+    <!-- ======= Our Services Section ======= -->
+    <section id="services" class="services sections-bg" data-aos="fade-up">
+      <div class="section-header">
+          <h2>Offres de service</h2>
+          </div>
+          <div class="container" >
+        
+        <div class="row gy-6">
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item" style="padding-right: 20px;">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>Services techniques</h3>
+              <p style="font-size: medium;">Nous proposons des services de mise à l'échelle de procédés industriels à nos clients tout en maintenant la qualité et la sécurité des produits désirée. 
+                Nous travaillons en étroite collaboration avec eux pour concevoir des solutions adaptées et rentables. Les services techniques que nous offrons comprennent entre autres : <br>
+                <p></p>
+              <ul style="font-size:medium; text-align: justify;" >
+                <li>Le traitement des résidus putrescibles et l'amélioration de leur biodégradabilité ;</li>
+                <li>L'isolement de souches sauvages à partir de résidus putrescibles ;</li>
+                <li>La production de biopesticides microbiens et fongiques, des inoculants microbiens, d’enzymes industrielles, de bioplastiques et de bio-hydrogène ;</li>
+                <li>L'étude des paramètres de fermentation aérobie ou anaérobie (milieux de culture, souches, microorganismes, conditions de croissance) ;</li>
+                <li>L'optimisation des bioprocédés (planification expérimentale, traitement statistique des données, culture en mode fed-batch, etc.) ;</li>
+                <li>La mise à l’échelle des bioprocédés jusqu’à 2000 L ;</li>
+                <li>La concentration ou la récupération à échelle semi-industrielle des produits microbiens par centrifugation (en continu ou semi-continu), microfiltration et ultrafiltration ;</li>
+                <li>La formulation à l’échelle semi-industrielle des produits microbiens récupérés sous forme de granules ou de poudre ;</li>
+                <li>La purification à l’échelle semi-industrielle des produits microbiens par chromatographie à échange d’ions ou lyophilisation ;</li>
+                <li>La conduite d'études de faisabilité et d'études technico-économique ;</li>
+                <li>et bien d'autre services.</li>
+              </ul>
+              </p>
+              <a href="http://lbe.ete.inrs.ca/services/" class="readmore stretched-link">En savoir plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-lg-6 col-md-6" style="padding-left: 20px;">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <h3>Infrastructures et équipements</h3>
+              <p style="font-size: medium;">Nous proposons la mise à disposition d'installations à nos clients pour répondre à leurs besoins de production. 
+                Nous disposons d'un large éventail d'installations de pointe, que nous mettons à la disposition de nos clients pour répondre à toutes les exigences spécifiques de nos clients. Nos installations comprennent entres autres:
+                <ul style="font-size:medium; text-align: justify;">
+                  <li>Deux laboratoires de fermentation (biosécurité de niveau 1) réservé à l’utilisation de substrats non conventionnels et de substrats conventionnels équipés d’une série de bioréacteurs (2 x 5 L, 2 x 15 L, 2 x 150 L, 1 x 2000 L);</li>
+                  <li>Des appareils pour le traitement en amont des substrats de fermentation non conventionnels dont un tamiseur industriel et deux hydrolyseurs (150 et 2000 L – ce dernier pouvant être aussi utilisé comme un bioréacteur de 2000 L);</li>
+                  <li>Des appareils pour le traitement en aval à échelle semi-industrielle des bouillons fermentés dont une centrifugeuse industrielle à disques, un système de microfiltration et d’ultrafiltration, un séchoir atomiseur, un système de chromatographie par échanges d’ions et un lyophilisateur</li>
+                  <li>Une chambre à environnement (biosécurité de niveau 2) pour la production d’inocula et l’entreposage des souches ainsi que le contrôle de la qualité et la caractérisation des produits microbiens purifiés;</li>
+                  <li>Un laboratoire analytique pour la caractérisation des substrats non conventionnels, le contrôle de la qualité de certains produits microbiens et le suivi de procédé qui est, entre autres, équipé d’un GC-MS, d’un LC-MS-MS et d’un cytofluomètre.</li>
+                </ul>
+              </p>
+              <a href="http://lbe.ete.inrs.ca/equipements/" class="readmore stretched-link">En savoir plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+      </div>
+    </section><!-- End Our Services Section -->
+    <!-- ======= Équipement Section ======= -->
+    <section id="equipements" class="equipements" data-aos="fade-up"> 
+      <div class="section-header">
+          <h2>Équipements et installations</h2>
+        </div><div class="container-equipements" >
+
+        <div class="slides-3 swiper" slidesPerView="4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\LBE-Photo-INRS-2021-001.jpg" class="equipements-img flex-shrink-0" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-1-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-2-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt=""> 
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-3-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">                  
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-4-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipments item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\LBE-Photo-INRS-2021-001.jpg" class="equipements-img flex-shrink-0" alt="">        
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+    <!-- ======= Partenaires Section ======= -->
+    <section id="partenaires" class="partenaires sections-bg" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Partenaires</h2>
+          <p class="p-dessous-h2-partenaires">
+            Nous sommes fiers de travailler avec des partenaires de confiance qui partagent notre vision 
+            et nos valeurs. Ensemble, nous travaillons à offrir des solutions innovantes. Nous sommes 
+            aussi reconnaissants envers nos partenaires pour leur engagement et leur confiance continue.</p>
+        </div>      
+        <div class="container-partenaires" >
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="imagelogo\adm.webp" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\inrs.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\lbe.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\miellerie-king.webp" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\rothsay.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\semican.webp" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\non dimensionné\uds.png" class="img-fluid" alt="" style="width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\ulaval.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\virentia.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="swiper-slide"><img src="imagelogo\white-birch-paper.png" class="img-fluid" alt="" style="max-width: 100%; max-height: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-5">
+            <img src="carlos-muza-hpjSkU2UYSU-unsplash.jpg" alt="" class="img-fluid" style="border-radius: 10px;">
+          </div>
+          <div class="col-lg-1">  </div>
+          <div class="col-lg-6">
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="0.2" class="purecounter"></span>
+              <p><strong>Entreprises de différents secteurs impliquées à ce jour</strong> <br> Plusieurs autres entreprises des secteurs de l'agroalimentaire et de la pêcherie sont en instance de rejoindre le projet. </p>
+            </div><!-- End Stats Item -->
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="0.2" class="purecounter"></span>
+              <p><strong>Villes actuellement couvertes</strong> <br> Le projet entend couvrir toute la province de Québec et associer les entreprises elligibles dans chaque ville, zone industrielle et hammeau de la province.</p>
+            </div><!-- End Stats Item -->
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="0.2" class="purecounter"></span>
+              <p><strong>Acteurs différents impliqués</strong> <br> Universités, Instituts de recherches, Fondation, Entreprises, Associations sont autants de parties prenantes impliquées dans le projet CRFQ.</p>
+            </div><!-- End Stats Item -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ======= Équipe Section ======= -->
+    <section id="team" class="team" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Notre équipe</h2> 
+        </div>  
+        <div class="container" >
+
+        <div class="row gy-4">
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="images\Kokou-Adjalle-professeur-en-Biotechnologies-environnementales-INRS-H-Web-580x640-removebg-preview.png" class="img-fluid" alt="">
+              <h4>Prof. Kokou Adjallé</h4>
+              <span>Directeur du Projet</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="images\crop-Denis-Groleau-web-removebg-preview.png" class="img-fluid" alt="">
+              <h4>Prof. Denis Groleau</h4>
+              <span>Collaborateur</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="images\crop4_IMG-4987-removebg-preview.jpg" class="img-fluid" alt="">
+              <h4>Dr. Adama Ndao</h4>
+              <span>Collaborateur</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="images\Mathieu_Droin.jpg" class="img-fluid" alt="">
+              <h4>Dr. Mathieu Drouin</h4>
+              <span>Collaborateur</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+        </div>
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+<!-- ======= Équipe Section ======= -->
+<section id="team" class="team">
+  <div class="container" data-aos="fade-up" style="margin: top 5vm;">
+    <div class="section-header">
+      
+    </div>
+    <div class="row gy-4">
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="member">
+          <img src="images\Gene_rogne-bg.png" class="img-fluid" alt="">
+          <h4>Genevière Rioux, Msc</h4>
+          <span>Agente de recherche</span>
+          <div class="social">
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="member">
+          <img src="images\Photo_Delon_Konan_Rogne_bg.png" class="img-fluid" alt="">
+          <h4>Delon Konan</h4>
+          <span>Doctorant</span>
+          <div class="social">
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="member">
+          <img src="images\Peterson_Eric_Charles-bg.png" class="img-fluid" alt="">
+          <h4>Prof. Eric Peterson</h4>
+          <span>Collaborateur</span>
+          <div class="social">
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="member">
+          <img src="images\Eric-Deziel-bg.png" class="img-fluid" alt="">
+          <h4>Prof. Eric Deziel</h4>
+          <span>Collaborateur</span>
+          <div class="social">
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+    </div>
+  </div>
+</section><!-- End Our Team Section -->
+
+
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact sections-bg" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Contactez-nous</h2>
+        </div>      
+        <div class="container" >
+
+        <div class="row gx-lg-0 gy-4">
+          <div class="col-lg-4">
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Notre adresse:</h4>
+                  <p> 2605, boul. du Parc-Technologique Québec (Québec) G1P 4S5 Canada</p>
+                </div>
+              </div><!-- End Info Item -->
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>crfq-quebec@inrs.ca</p>
+                </div>
+              </div><!-- End Info Item -->
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Appelez nous:</h4>
+                  <p>+1 (418) 654 2610</p>
+                </div>
+              </div><!-- End Info Item -->
+              <div class="info-item d-flex">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h4>Heures ouvertes:</h4>
+                  <p>Lun-Vend: 9h - 16h</p>
+                </div>
+              </div><!-- End Info Item -->
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nom et prénoms" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center"> 
+            <span>CRFQ<strong style="color:peru">.</strong></span>
+          </a>
+          <p>Cartographie des résidus fermentescibles du Québec.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#carte-interactive">Carte intéractive</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#partenaires">Partenaires</a></li>
+            <li><a href="#team">Équipe</a></li>
+            <li><a href="#contact">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nos services</h4>
+          <ul>
+            <li><a href="#">Conseils</a></li>
+            <li><a href="#">Mise à l'échelle</a></li>
+            <li><a href="#">Bioingénierie environnementale</a></li>
+            <li><a href="#">Developpement de procédés</a></li>
+            <li><a href="#">Valorisation de résidus</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contactez-nous</h4>
+          <p>
+            2605, boul. du Parc-Technologique  <br>
+            Québec (Québec)<br>
+            G1P 4S5 Canada<br><br>
+            <strong>Téléphone:</strong> +1 (418) 654 2610<br>
+            <strong>Email:</strong> crf-quebec@inrs.ca<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CRFQ</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> 
+  <div id="preloader"></div> 
+
+
+
+</body>
+
+</html>

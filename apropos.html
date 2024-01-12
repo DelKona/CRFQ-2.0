@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <title>camref-quebec</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="myimage.css" />
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- inclusion du JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   <!-- inclusion du JavaScript de papaparse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+  <!-- Favicons -->
+  <link href="" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+  <!-- Inclusion bibliotheque D3 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script> 
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact - v1.2.0
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.css">
+  <link rel="stylesheet" href="../src/L.Control.Sidebar.css" /> 
+  <style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+    }
+    .lorem {
+        font-style: italic;
+        color: #1a1919;
+    }
+    body > #sidebar {
+        display: none;
+    }
+</style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">camref-quebec@inrs.ca</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 (418) 654 2610 </span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>CAMREF<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#carte-interactive">Carte intéractive</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#partenaires">Partenaires</a></li>
+          <li><a href="index.html#team">Équipe</a></li>
+          <li><a href="index.html#contact">Contacts</a></li>
+          <li><a href="#">À propos</a></li>
+          
+        </ul>
+      </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero" style="padding: 1px"> 
+      <div class="section-header" style="padding:10px; margin: 10px;">
+        <h2 >À propos<strong style="color: peru">.</strong></h2>
+      </div> 
+  </section>
+<section>
+  <div class="container">
+  <p style="text-align: justify">
+    Le projet <strong>CAMREF</strong> est une initiative qui vise à réaliser une cartographie
+     exhaustive et une caractérisation physico-chimique des résidus 
+     fermentescibles au Québec. Les retombées de ce projet seront mises à la disposition 
+     du MAPAQ, des milieux de la recherche (universités, Cégep, centres de recherche, 
+     etc.), des municipalités, et des industries du Québec intéressé par les biotechnologies 
+     industrielles impliquant la fermentation et l’économie circulaire. 
+     </p>
+     <p style="text-align: justify">
+Dans un concept de développement durable, l’économie circulaire consiste à préserver les ressources 
+naturelles existantes et à transformer les déchets en produits utiles. Ce modèle économique vise à 
+minimiser la consommation et l’élimination des ressources, à prolonger la durée de vie des produits 
+et sous-produits. Pour cela, il faut non seulement développer des technologies innovantes, mais 
+aussi avoir accès aux matières résiduelles pouvant être valorisées. Dans le domaine de la 
+biotechnologie industrielle, il y a eu beaucoup de progrès, surtout dans les bioprocédés 
+industriels liés à la fermentation. Au Québec, malgré ces progrès en recherche et en innovation,
+les applications industrielles sont encore peu développées. L’une des raisons est le manque 
+de données sur les opportunités d’utiliser de façon efficace et rentable, des résidus fermentescibles.
+Il est donc essentiel de dresser un inventaire de ces résidus en termes de disponibilité dans 
+l’espace québécois et d’analyser leur composition physico-chimique afin de prendre conscience 
+du potentiel fermentescible de ces résidus.
+     </p>
+<p style="text-align: justify">
+Cette initiative permettra de façonner des synergies et différents modèles de collaboration entre 
+partenaires industriels et milieux de la recherche. Et de développer une filière industrielle 
+porteuse utilisant les avancées de la biotechnologie pour valoriser des matières résiduelles 
+dont on dispose présentement sans égard à leur valeur potentielle, leur coût d’élimination ou leur impact environnemental.
+
+</p>
+
+  </p> 
+  </div>
+
+</section>
+
+  <!-- End Hero Section -->
+ 
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>CAMREF<strong style="color:peru">.</strong></span>
+          </a>
+          <p>Cartographie des matières résiduelles fermentescibles agroalimentaire</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#carte-interactive">Carte intéractive</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#partenaires">Partenaires</a></li>
+            <li><a href="#team">Équipe</a></li>
+            <li><a href="#contact">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nos services</h4>
+          <ul>
+            <li><a href="#">Conseils</a></li>
+            <li><a href="#">Mise à l'échelle</a></li>
+            <li><a href="#">Bioingénierie environnementale</a></li>
+            <li><a href="#">Developpement de procédés</a></li>
+            <li><a href="#">Valorisation de résidus</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contactez-nous</h4>
+          <p>
+            2605, boul. du Parc-Technologique  <br>
+            Québec (Québec)<br>
+            G1P 4S5 Canada<br><br>
+            <strong>Téléphone:</strong> +1 (418) 654 2610<br>
+            <strong>Email:</strong> camref-quebec@inrs.ca<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CAMREF</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> 
+  <div id="preloader"></div> 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> 
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

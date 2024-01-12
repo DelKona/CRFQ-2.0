@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <title>crfq</title>
+
+
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="myimage.css" />
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- inclusion du JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   <!-- inclusion du JavaScript de papaparse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+
+
+
+  <!-- Google Fonts Importé -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ <!-- Vendor CSS Files Importé-->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+  <!-- Vendor CSS Files -->
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+  
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Inclusion bibliotheque D3 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script> 
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../src/L.Control.Sidebar.css" /> 
+
+  <!-- AwesomeMarkers CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.awesome-markers/dist/leaflet.awesome-markers.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+
+  <!-- AwesomeMarkers JS -->
+  <script src="https://unpkg.com/leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> 
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+
+  <!-- Vendor JS Files importé-->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Template Main JS File importé-->
+  <script src="assets/js/main.js"></script>
+  <style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+    }
+    .lorem {
+        font-style: italic;
+        color: #1a1919;
+    }
+    body > #sidebar {
+        display: none;
+    }
+</style>
+</head>
+<body>
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>CRFQ<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#carte-interactive">Carte interactive</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#partenaires">Partenaires</a></li>
+          <li><a href="#team">Équipe</a></li>
+          <li><a href="#contact">Contacts</a></li>
+          <li><a href="apropos.html">À propos</a></li> 
+        </ul>
+      </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+ <!-- ======= Carte interactive Section ======= -->
+  <section id="carte-interactive" class="carte-interactive sections-bg" data-aos="fade-up">
+    <div class="carte-interactive-header"> 
+      <h2> Carte interactive </h2> 
+
+
+    </div>
+        <div class="container-box-carte">
+          <div class="section-header"> 
+          </div>
+                  <!-- création des div sidebarX --> 
+
+                  <!-- création du contenu de la sidebar de kruger -->
+          <div class="container-carte"> 
+          <div id="sidebar1">
+            
+
+            </div>
+    <!-- création du contenu de la sidebar de white birch --> 
+    <div id="sidebar2">
+ </div> 
+
+ <div id="sidebar3">
+</div> 
+
+ <!-- Fin de la création des div sidebar -->
+
+
+           <div id="map"  style="width:100%; height:80vh; margin: 0 0cm;"></div>
+    
+            <script src="leafletgithub\src\L.Control.Sidebar.js"></script>
+             <!-- Fin de la création des div sidebar --> 
+
+
+
+      <script> 
+            // création de la carte
+            var map = L.map('map');
+            // ajout des tuiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map data &copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // configuration de la vue de la carte
+            map.setView([46.1998153288181, -72.27754701711997], 8);
+            var activeSidebar = null ; 
+
+
+
+// creation des marqueurs 
+
+ var markerCoords = [45.32712853924076, -72.55789197099591];
+
+  // Création du marqueur avec AwesomeMarker
+  var redMarker = L.AwesomeMarkers.icon({
+    icon: 'info-circle',
+    markerColor: 'green'
+  });
+
+  // Ajout du marqueur à la carte
+  L.marker([45.32712853924076, -72.55789197099591], { icon: redMarker }).addTo(map).on('click', function () {
+              if (activeSidebar) {
+              activeSidebar.hide();
+              };
+              sidebar1.show();
+              activeSidebar = sidebar1
+              marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom()); 
+              })
+
+
+            });
+ 
+            
+            // creation du marker kruger
+            var sidebar1 = L.control.sidebar('sidebar1', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar1);  setTimeout(function () {
+                sidebar.show();
+            }, 500);
+            var marker1 = L.marker([46.32712853924076, -72.55789197099591],{ icon: redMarker }).addTo(map).on('click', function () {
+              if (activeSidebar) {
+              activeSidebar.hide();
+              };
+              sidebar1.show();
+              activeSidebar = sidebar1
+              marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom()); 
+              })
+
+
+            });
+ // creation du marker white birch paper
+ 
+            var sidebar2 = L.control.sidebar('sidebar2', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar2); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+
+ var marker2 = L.marker([46.824253294303276, -71.21528147291784]).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar2.show();
+                activeSidebar = sidebar2
+                marker2.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            });
+
+
+              var sidebar3 = L.control.sidebar('sidebar3', {
+                closeButton: true,
+                position: 'left'
+            });
+            map.addControl(sidebar3); setTimeout(function () {
+                sidebar.show();
+            }, 500);
+              // Création du marqueur avec AwesomeMarker
+ 
+  var marker3 = L.marker([46.50731979364537, -73.42416031900203]).addTo(map).on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar3.show();
+                activeSidebar = sidebar3
+                marker3.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            });
+ 
+        </script>
+        </div>
+        </div>
+    </section><!-- End Carte interactive Section -->
+
+
+ </body>
+
+</html>

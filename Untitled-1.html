@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>camref-quebec</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.sidetabs/2.0.0/leaflet.sidetabs.css" />
+  <script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/leaflet.sidetabs/2.0.0/leaflet.sidetabs.js"></script>
+
+  
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="myimage.css" />
+ 
+  <!-- Inlcusion du CSS de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!-- inclusion du JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- inclusion du JavaScript de papaparse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+  
+  <!-- Favicons -->
+  <link href="" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact - v1.2.0
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+	<style>
+		#sidebar {
+			position: absolute;
+			top: 50px;
+			right: 0;
+			bottom: 0;
+			width: 300px;
+			background-color: rgb(210, 228, 214);
+      border-radius: 30px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			overflow-y: scroll;
+			padding: 10px;
+      z-index: 999;
+		}
+	</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">camref-quebec@inrs.ca</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 (418) 654 2610 </span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>CAMREF<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#carte-interactive">Carte intéractive</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#partenaires">Partenaires</a></li>
+          <li><a href="#team">Équipe</a></li>
+          <li class="dropdown"><a href="#"><span>A propos</span></a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-4" data-aos="fade-in">
+        <div class="col-lg-12 order-1 order-lg-6 d-flex flex-row justify-content text-center text-lg-start">
+          <div class="col-lg-12 order-1 order-lg-6 d-flex flex-row justify-content text-center text-lg-start">
+            <div> 
+            <h2>Cartographie des matières résiduelles fermentescibles des industries des secteurs de l'agroalimentaire et de la pêcherie au Québec </h2>
+            <p> </p>
+            <div id="boutton-accedez" class="d-flex justify-content-center justify-content-lg-start" style="margin-top:50;">
+                <a href="#carte-interactive" class="btn-get-started">Carte interactive</a>
+                <a href="" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Découvrez le projet</span></a>
+              </div>
+
+          </div>
+          <div class="col-lg-1 order-2 position-relative" ></div>
+          <div class="col-lg-3 order-3 position-relative">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">               
+                <div class="carousel-item active">
+                  <img src="images\Carrousel\carrousel_gelee_lavee_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_gelee_verte_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_luzerne_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_jus_jaune_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 order-3 position-relative">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images\Carrousel\Carrousel_image3.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_image2.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_luzerne_macrofibre_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images\Carrousel\Carrousel_luzerne_microfibre_cleanup.jpeg" class="d-block w-5 h-15" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+             
+              <h4 class="title"><a href="#carte-interactive" class="stretched-link"> <strong>Étape 1 : </strong><br> Explorez la carte des résidus fermentescibles</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              
+              <h4 class="title"><a href="#" class="stretched-link"> <strong>Étape 2 :</strong><br> Consultez la disponibilité des résidus </a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <h4 class="title"><a href="" class="stretched-link"> <strong>Étape 3 :</strong><br> Découvrez les voies de valorisation potentielles</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+         
+              <h4 class="title"><a href="#services" class="stretched-link"> <strong> Étape 4 :</strong> <br> Accédez à nos offres de services et installations</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <!-- ======= Carte interactive Section ======= -->
+  <section id="carte-interactive" class="carte-interactive sections-bg">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Carte interactive</h2>
+            <p style="margin-left: 30px;  text-align: left; font-size: large;">
+             En cliquant sur chaque marqueur sur la carte, vous découvrirez les résidus fermentescibles que produisent chaque entreprise ainsi que leur aspect et différentes caractéristiques tels que la composition chimique, les quantités produites par an, etc.
+            </p>
+          </div>
+      <div id="map" style="width:100%; height:80vh; margin: 0 0cm;"></div>
+      <div id="sidebar"></div>
+      <script src="leaflet.js"></script>
+      <script src="creme.js"></script>
+      <script src="creme1.js"></script>
+      <script src="matsecheimage.js"></script>
+      <script src="reste.js"></script>
+      
+      
+      <script>
+        // Création de la carte avec les coordonnées du centre et le niveau de zoom
+        var map = L.map('map').setView([46.6534, -72.3488], 4);
+  
+        
+  
+        // Ajout de la couche de tuiles de base (ici OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'+'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 9, minZoom: 2
+        }).addTo(map);
+  
+        // Chargement des points à partir du fichier GeoJSON
+  
+  
+        // Ajout des points et des popups sur la carte
+        var layer1 = L.geoJSON(matsecheimage, {
+          onEachFeature: function(feature, layer) {
+            layer.bindPopup('<h2>' + feature.properties.Entreprise + '</h2>' 
+            + feature.properties.descriptionEntreprise + '<p><img src="' + feature.properties.image + '" width="300" height="200" style="border-radius: 5px">', {
+    allowScripts: true,
+  });
+          }
+        }).addTo(map);
+  
+  
+        // Ajout des points et des popups sur la carte
+        var layer2 = L.geoJSON(reste, {
+          onEachFeature: function(feature, layer) {
+            layer.bindPopup('<h2>' + feature.properties.Entreprise + '</h2>' 
+            + feature.properties.descriptionEntreprise 
+            + '<p><img src="' + feature.properties.image + '" width="300" height="200" style="border-radius: 5px">', {
+    allowScripts: true,
+  });
+          }
+        }).addTo(map);
+  
+        // Créer un panneau de contrôle qui permet de basculer entre les couches
+      L.control.layers({}, {
+    'Industries fruitières': layer1,
+    'Industries laitières': layer2,
+      }).addTo(map);
+
+
+
+
+
+  var data = Papa.parse("data.csv", {
+  header: true,
+  download: true,
+  delimiter: ";",
+  
+  complete: function(results) {
+    // Création du tableau HTML à partir des données
+    var table = "<table>";
+    table += "<tr>";
+    for (var i = 0; i < results.meta.fields.length; i++) {
+      table += "<th>" + results.meta.fields[i] + "</th>";
+    }
+    table += "</tr>";
+    for (var i = 0; i < results.data.length; i++) {
+      table += "<tr>";
+      for (var j = 0; j < results.meta.fields.length; j++) {
+        table += "<td>" + results.data[i][results.meta.fields[j]] + "</td>";
+      }
+      table += "</tr>";
+    }
+    table += "</table>";
+
+    // Création d'un marqueur avec popup contenant le tableau
+    var marker = L.marker([48.8566, -72.3522])
+      .bindPopup(table)
+      .addTo(map);
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      </script>
+  
+    </section><!-- End Carte interactive Section -->
+
+    
+    <!-- ======= Our Services Section ======= -->
+    <section id="services" class="services sections-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header position-relative">
+          <h2>Nos offres de service</h2>
+          </div>
+        <div class="row gy-6" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>Services techniques</h3>
+              <p style="font-size: medium;">Nous proposons des services de mise à l'échelle de procédés industriels à nos clients tout en maintenant la qualité et la sécurité des produits désirée. 
+                Nous travaillons en étroite collaboration avec eux pour concevoir des solutions adaptées et rentables. Les services techniques que nous offrons comprennent entre autres : <br>
+                <p></p>
+              <ul style="font-size:medium">
+                <li>Le traitement des résidus putrescibles et l'amélioration de leur biodégradabilité ;</li>
+                <li>L'isolement de souches sauvages à partir de résidus putrescibles ;</li>
+                <li>La production de biopesticides microbiens et fongiques, des inoculants microbiens, d’enzymes industrielles, de bioplastiques et de bio-hydrogène ;</li>
+                <li>L'étude des paramètres de fermentation aérobie ou anaérobie (milieux de culture, souches, microorganismes, conditions de croissance) ;</li>
+                <li>L'optimisation des bioprocédés (planification expérimentale, traitement statistique des données, culture en mode fed-batch, etc.) ;</li>
+                <li>La mise à l’échelle des bioprocédés jusqu’à 2000 L ;</li>
+                <li>La concentration ou la récupération à échelle semi-industrielle des produits microbiens par centrifugation (en continu ou semi-continu), microfiltration et ultrafiltration ;</li>
+                <li>La formulation à l’échelle semi-industrielle des produits microbiens récupérés sous forme de granules ou de poudre ;</li>
+                <li>La purification à l’échelle semi-industrielle des produits microbiens par chromatographie à échange d’ions ou lyophilisation ;</li>
+                <li>La conduite d'études de faisabilité et d'études technico-économique ;</li>
+                <li>et bien d'autre services.</li>
+              </ul>            
+              </p>
+              <a href="#" class="readmore stretched-link">En savoir plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <h3>Infrastructures et équipements</h3>
+              <p style="font-size: medium;">Nous proposons la mise à disposition d'installations à nos clients pour répondre à leurs besoins de production. 
+                Nous disposons d'un large éventail d'installations de pointe, que nous mettons à la disposition de nos clients pour répondre à toutes les exigences spécifiques de nos clients. Nos installations comprennent entres autres:
+                <ul style="font-size:medium">
+                  <li>Deux laboratoires de fermentation (biosécurité de niveau 1) réservé à l’utilisation de substrats non conventionnels et de substrats conventionnels équipés d’une série de bioréacteurs (2 x 5 L, 2 x 15 L, 2 x 150 L, 1 x 2000 L);</li>
+                  <li>Des appareils pour le traitement en amont des substrats de fermentation non conventionnels dont un tamiseur industriel et deux hydrolyseurs (150 et 2000 L – ce dernier pouvant être aussi utilisé comme un bioréacteur de 2000 L);</li>
+                  <li>Des appareils pour le traitement en aval à échelle semi-industrielle des bouillons fermentés dont une centrifugeuse industrielle à disques, un système de microfiltration et d’ultrafiltration, un séchoir atomiseur, un système de chromatographie par échanges d’ions et un lyophilisateur</li>
+                  <li>Une chambre à environnement (biosécurité de niveau 2) pour la production d’inocula et l’entreposage des souches ainsi que le contrôle de la qualité et la caractérisation des produits microbiens purifiés;</li>
+                  <li>Un laboratoire analytique pour la caractérisation des substrats non conventionnels, le contrôle de la qualité de certains produits microbiens et le suivi de procédé qui est, entre autres, équipé d’un GC-MS, d’un LC-MS-MS et d’un cytofluomètre.</li>
+                </ul>
+              
+              </p>
+              <a href="#" class="readmore stretched-link">En savoir plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+      </div>
+    </section><!-- End Our Services Section -->
+
+
+    <!-- ======= Équipement Section ======= -->
+    <section id="equipements" class="equipements">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Nos équipements et installations</h2>      
+        </div>
+        <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100" slidesPerView="2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\LBE-Photo-INRS-2021-001.jpg" class="equipements-img flex-shrink-0" alt="">                   
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-1-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">
+                    
+                  </div>
+                
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-2-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">
+                    
+                  </div>
+                 
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-3-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">                  
+                  </div>                  
+                </div>
+              </div>
+            </div><!-- End equipment item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\Recherche-laboratoire-biotechnologies-Environnementales-LBE-4-inrs-1200x780.jpg" class="equipements-img flex-shrink-0" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End equipments item -->
+            <div class="swiper-slide">
+              <div class="equipements-wrap">
+                <div class="equipements-item">
+                  <div class="d-flex align-items-center">
+                    <img src="Imagelabo\LBE-Photo-INRS-2021-001.jpg" class="equipements-img flex-shrink-0" alt="">        
+                  </div>                
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+
+
+    <!-- ======= Partenaires Section ======= -->
+    <section id="partenaires" class="partenaires">
+      <div class="container" data-aos="zoom-out">
+        <div class="section-header">
+          <h2>Nos partenaires</h2>
+          <p>Nous sommes fiers de travailler avec des partenaires de confiance qui partagent notre vision et nos valeurs. Ensemble, nous travaillons à offrir des solutions innovantes. <br> Nous sommes aussi reconnaissants envers nos partenaires pour leur engagement et leur confiance continue.</p>
+        </div>
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="imagelogo\adm.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\inrs.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\lbe.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\miellerie-king.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\rothsay.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\semican.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\non dimensionné\uds.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\ulaval.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\virentia.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="imagelogo\white-birch-paper.png" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4 align-items-center">
+
+          <div class="col-lg-6">
+            <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Entreprises du secteur agroalimentaires impliquées à ce jour</strong> <br> Plusieurs autres entreprises des secteurs de l'agroalimentaire et de la pêcherie sont en instance de rejoindre le projet </p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Villes actuellement couvertes</strong> <br> Le projet entend couvrir toute la province de Québec et associer les entreprises elligibles dans chaque ville, zone industrielle et hammeau de la province</p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Acteurs différents impliqués</strong> <br> Conseils municipaux, Université, Instituts de recherches, Entreprises, Associations et Investisseurs sont autants de parties prenantes impliquées dans le projet CAMREF</p>
+            </div><!-- End Stats Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+
+      <!-- ======= Équipe Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Notre équipe</h2>
+          <p>    </p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="images\Kokou-Adjalle-professeur-en-Biotechnologies-environnementales-INRS-H-Web-580x640-removebg-preview.png" class="img-fluid" alt="">
+              <h4>Prof. Kokou Adjallé</h4>
+              <span>Directeur du Projet</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="images\crop-Denis-Groleau-web-removebg-preview.png" class="img-fluid" alt="">
+              <h4>Prof. Denis Groleau</h4>
+              <span>Collaborateur</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="images\crop4_IMG-4987-removebg-preview.jpg" class="img-fluid" alt="">
+              <h4>Dr. Adama Ndao</h4>
+              <span>Associé de recherche</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="images\Untitled2_design-removebg-preview.png" class="img-fluid" alt="">
+              <h4>Delon Konan</h4>
+              <span>Doctorant</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Nos contacts</h2>
+          
+        </div>
+
+        <div class="row gx-lg-0 gy-4">
+
+          <div class="col-lg-4">
+
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Notre adresse:</h4>
+                  <p> 2605, boul. du Parc-Technologique Québec (Québec) G1P 4S5 Canada</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>camref-quebec@inrs.ca</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Appelez nous:</h4>
+                  <p>+1 (418) 654 2610</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h4>Heures ouvertes:</h4>
+                  <p>Lun-Vend: 9h - 16h</p>
+                </div>
+              </div><!-- End Info Item -->
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nom et prénoms" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>CAMREF</span>
+          </a>
+          <p>Cartographie des matières résiduelles fermentescibles agroalimentaire et de pêcherie au Québec.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#carte-interactive">Carte intéractive</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#partenaires">Partenaires</a></li>
+            <li><a href="#team">Équipe</a></li>
+            <li><a href="#contact">Contacts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nos services</h4>
+          <ul>
+            <li><a href="#">Conseils</a></li>
+            <li><a href="#">Mise à l'échelle</a></li>
+            <li><a href="#">Bioingénierie environnementale</a></li>
+            <li><a href="#">Developpement de procédés</a></li>
+            <li><a href="#">Valorisation de résidus</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contactez-nous</h4>
+          <p>
+            2605, boul. du Parc-Technologique  <br>
+            Québec (Québec)<br>
+            G1P 4S5 Canada<br><br>
+            <strong>Téléphone:</strong> +1 (418) 654 2610<br>
+            <strong>Email:</strong> camref-quebec@inrs.ca<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CAMREF</span></strong>. All Rights Reserved
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
