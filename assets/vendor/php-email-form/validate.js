@@ -27,6 +27,42 @@
 
       let formData = new FormData( thisForm );
 
+
+
+
+
+
+
+
+
+
+
+
+       // Check for required fields
+       let requiredFields = thisForm.querySelectorAll('[required]');
+       let formValid = true;
+ 
+       requiredFields.forEach(function (field) {
+         if (!field.value.trim()) {
+           formValid = false;
+           displayError(thisForm, 'Veillez remplir ce champs SVP.');
+         }
+       });
+ 
+       if (!formValid) {
+         thisForm.querySelector('.loading').classList.remove('d-block');
+         return;
+       }
+
+
+
+
+
+
+
+
+
+
       if ( recaptcha ) {
         if(typeof grecaptcha !== "undefined" ) {
           grecaptcha.ready(function() {
