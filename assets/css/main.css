@@ -1464,6 +1464,10 @@ section {
 /*--------------------------------------------------------------
 # Our Team Section
 --------------------------------------------------------------*/
+.team {
+  padding-bottom: 0.5%;
+}
+
 .team h2 {
   color:var(--color-primary);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
