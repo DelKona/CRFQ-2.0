@@ -152,8 +152,8 @@
       <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
         <div class="carousel-container">
           <div class="container">
-            <h2 class="animate__animated animate__fadeInDown"> Fixer le cap vers une industrie zéro déchet.</h2>
-            <p class="animate__animated animate__fadeInUp">Aujourd'hui posssible grâce au developpement des biotechnologies environnementales.</p>
+            <h2 class="animate__animated animate__fadeInDown"> Fixer le cap vers une industrie zéro déchet</h2>
+            <p class="animate__animated animate__fadeInUp">Aujourd'hui possible grâce au développement des biotechnologies environnementales.</p>
             <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">Rejoingnez-nous</a>
           </div>
         </div>
@@ -252,7 +252,7 @@
           <div class="col-lg-6 col-md-12">
             <div class="stats-item1 d-flex align-items-center">
               <span data-purecounter-start="0" data-purecounter-end="12400" data-purecounter-duration="0.5" class="purecounter"></span>
-              <p>Entreprises au Québec sont liées aux secteurs à l'agriculture, de la foresterie et la pêche.</p>
+              <p>Entreprises au Québec sont liées aux secteurs agricoles, forestiers et des pêches.</p>
             </div><!-- End Stats Item -->
             <div class="stats-item1 d-flex align-items-center">
               <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="0.6" class="purecounter"></span>
@@ -288,10 +288,10 @@
       <h2> Carte interactive </h2> 
       <p class="p-dessous-h2-carte-interactive">
         Explorez les résidus fermentescibles dans la province de Québec à l'aide de la carte interactive. Les marqueurs 
-        sur la carte indiquent l'emplacement des entreprises qui produisent ces résidus. En cliquant sur 
-        un marqueur, la bare latérale qui s'affiche vous donne une description de l'entreprise et les caractéristiques
+        sur la carte indiquent l'emplacement et le nom des entreprises qui produisent ces résidus. En cliquant sur 
+        un marqueur, la barre latérale qui s'affiche vous donne une description de l'entreprise ainsi que les caractéristiques physico-chimiques
         des residus fermentescibles qu'elle produit. Le panneau des thèmes en haut à droite vous permet de faire une 
-        exploration thématique de la carte en cochant ou découchant un ou plusieurs thèmes. 
+        exploration thématique de la carte. 
       </p>
 
     </div>
@@ -2724,27 +2724,27 @@
 
                 // Créez des couches pour chaque catégorie
                 var categoryLayers = {
-                    'AGRO-ALIMENTAIRE': L.layerGroup(),
-                    'PAPETERIE': L.layerGroup(),
+                    'AGROALIMENTAIRE': L.layerGroup(),
+                    'PÂTE ET PAPIER': L.layerGroup(),
                     'PRODUCTION AGRICOLE': L.layerGroup(),
                     'INDUSTRIE LAITIÈRE': L.layerGroup(),
-                    'HUILERIE': L.layerGroup(),
+                    "PRODUCTION D'HUILE": L.layerGroup(),
                     // Ajoutez d'autres catégories au besoin
                 };
 
                 // Ajoutez les marqueurs à leurs couches respectives
-                marker1.addTo(categoryLayers['PAPETERIE']);
-                marker2.addTo(categoryLayers['PAPETERIE']);
-                marker3.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
-                marker4.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
-                marker5.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
-                marker6.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
-                marker7.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
-                marker8.addTo(categoryLayers['HUILERIE']);
-                marker9.addTo(categoryLayers['HUILERIE']);
-                marker10.addTo(categoryLayers['HUILERIE']);
+                marker1.addTo(categoryLayers['PÂTE ET PAPIER']);
+                marker2.addTo(categoryLayers['PÂTE ET PAPIER']);
+                marker3.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker4.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker5.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker6.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker7.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker8.addTo(categoryLayers["PRODUCTION D'HUILE"]);
+                marker9.addTo(categoryLayers["PRODUCTION D'HUILE"]);
+                marker10.addTo(categoryLayers["PRODUCTION D'HUILE"]);
                 marker11.addTo(categoryLayers['PRODUCTION AGRICOLE']);
-                marker12.addTo(categoryLayers['AGRO-ALIMENTAIRE']);
+                marker12.addTo(categoryLayers['AGROALIMENTAIRE']);
                 marker13.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
                 marker14.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
                 marker15.addTo(categoryLayers['PRODUCTION AGRICOLE']);
@@ -3089,163 +3089,100 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- ======= Équipe Section ======= -->
+ <!-- ======= Équipe Section ======= -->
     <section id="team" class="team" data-aos="fade-up">
         <div class="section-header">
           <h2>Notre équipe</h2> 
         </div>  
-        <div class="container" >
+        <div class="container1" >
 
         <div class="row gy-4">
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-2.4 col-md-3" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <img src="images\Kokou-Adjalle-professeur-en-Biotechnologies-environnementales-INRS-H-Web-580x640-removebg-preview.png" class="img-fluid" alt="">
               <h4>Prof. Kokou Adjallé</h4>
               <span>Directeur du Projet</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+
             </div>
           </div><!-- End Team Member -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-2.4 col-md-3" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <img src="images\crop-Denis-Groleau-web-removebg-preview.png" class="img-fluid" alt="">
               <h4>Prof. Denis Groleau</h4>
               <span>Collaborateur</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+
             </div>
           </div><!-- End Team Member -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <img src="images\crop4_IMG-4987-removebg-preview.jpg" class="img-fluid" alt="">
+              <img src="images\Adama_Ndao.png" class="img-fluid" alt="">
               <h4>Dr. Adama Ndao</h4>
               <span>Collaborateur</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+
             </div>
           </div><!-- End Team Member -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
+            <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="400">
+             <div class="member">
               <img src="images\Mathieu_Droin.jpg" class="img-fluid" alt="">
               <h4>Dr. Mathieu Drouin</h4>
               <span>Collaborateur</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+
+            </div> 
+           </div>
+           <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="images\Gene_rogne-bg.png" class="img-fluid" alt="">
+              <h4>Geneviève Rioux, Msc</h4>
+              <span>Agente de recherche</span>
+    
             </div>
           </div><!-- End Team Member -->
-        </div>
-      </div>
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="images\Photo_Delon_Konan_Rogne_bg.png" class="img-fluid" alt="">
+              <h4>Delon Konan</h4>
+              <span>Doctorant</span>
+    
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="images\Peterson_Eric_Charles-bg.png" class="img-fluid" alt="">
+              <h4>Prof. Eric Peterson</h4>
+              <span>Collaborateur</span>
+    
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="images\Eric-Deziel-bg.png" class="img-fluid" alt="">
+              <h4>Prof. Eric Deziel</h4>
+              <span>Collaborateur</span>
+    
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-3 offset-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="images\Pr_Philippe-Constant.png" class="img-fluid" alt="">
+              <h4>Prof. Philippe Constant</h4>
+              <span>Collaborateur</span>
+
+            </div>
+          </div><!-- End Team Member --> 
+
+        <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="member">
+            <img src="images\Pr_Rouissi.png" class="img-fluid" alt="">
+            <h4>Prof. Tarek Rouissi</h4>
+            <span>Collaborateur</span>
+
+          </div>
+        </div><!-- End Team Member --> 
+       </div>
     </section><!-- End Our Team Section -->
 
 
-<!-- ======= Équipe Section ======= -->
-<section id="team" class="team">
-  <div class="container" data-aos="fade-up" style="margin: top 5vm;">
-    <div class="section-header">
-      
-    </div>
-    <div class="row gy-4">
-      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="member">
-          <img src="images\Gene_rogne-bg.png" class="img-fluid" alt="">
-          <h4>Genevière Rioux, Msc</h4>
-          <span>Agente de recherche</span>
-          <div class="social">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="member">
-          <img src="images\Photo_Delon_Konan_Rogne_bg.png" class="img-fluid" alt="">
-          <h4>Delon Konan</h4>
-          <span>Doctorant</span>
-          <div class="social">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="member">
-          <img src="images\Peterson_Eric_Charles-bg.png" class="img-fluid" alt="">
-          <h4>Prof. Eric Peterson</h4>
-          <span>Collaborateur</span>
-          <div class="social">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="member">
-          <img src="images\Eric-Deziel-bg.png" class="img-fluid" alt="">
-          <h4>Prof. Eric Deziel</h4>
-          <span>Collaborateur</span>
-          <div class="social">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-    </div>
-  </div>
-</section><!-- End Our Team Section -->
 
 
 
@@ -3278,14 +3215,14 @@
               <div class="info-item d-flex">
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
-                  <h4>Appelez nous:</h4>
+                  <h4>Appelez-nous:</h4>
                   <p>+1 (418) 654 2610</p>
                 </div>
               </div><!-- End Info Item -->
               <div class="info-item d-flex">
                 <i class="bi bi-clock flex-shrink-0"></i>
                 <div>
-                  <h4>Heures ouvertes:</h4>
+                  <h4>Heures d'ouverture:</h4>
                   <p>Lun-Vend: 9h - 16h</p>
                 </div>
               </div><!-- End Info Item -->
@@ -3312,7 +3249,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Envoyer</button></div>
             </form>
           </div><!-- End Contact Form -->
         </div>
@@ -3328,18 +3265,13 @@
             <span>CRFQ<strong style="color:peru">.</strong></span>
           </a>
           <p>Cartographie des résidus fermentescibles du Québec.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
+
         </div>
         <div class="col-lg-2 col-6 footer-links">
           <h4>Liens utiles</h4>
           <ul>
             <li><a href="#">Accueil</a></li>
-            <li><a href="#carte-interactive">Carte intéractive</a></li>
+            <li><a href="#carte-interactive">Carte interactive</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#partenaires">Partenaires</a></li>
             <li><a href="#team">Équipe</a></li>
@@ -3368,7 +3300,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-4">
+    <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>CRFQ</span></strong>. All Rights Reserved
       </div>
