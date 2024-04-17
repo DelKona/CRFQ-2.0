@@ -1,0 +1,107 @@
+[
+ {
+   "Paramètres": "Tonnage",
+   "Unité": "T/an",
+   "Valeurs": 48206
+ },
+ {
+   "Paramètres": "pH",
+   "Unité": "-",
+   "Valeurs": 6.65
+ },
+ {
+   "Paramètres": "Solides totaux",
+   "Unité": "g/L",
+   "Valeurs": 10.3
+ },
+ {
+   "Paramètres": "Solides totaux volatils",
+   "Unité": "g/L",
+   "Valeurs": 6.09
+ },
+ {
+   "Paramètres": "Solides en suspensions",
+   "Unité": "g/L",
+   "Valeurs": 9.4
+ },
+ {
+   "Paramètres": "Solides en suspensions volatils",
+   "Unité": "g/L",
+   "Valeurs": 2.35
+ },
+ {
+   "Paramètres": "Carbone organique-fraction liquide",
+   "Unité": "gC/kg",
+   "Valeurs": 14
+ },
+ {
+   "Paramètres": "Azote organique-fraction liquide",
+   "Unité": "gN/kg",
+   "Valeurs": 1.4
+ },
+ {
+   "Paramètres": "Phosphore organique",
+   "Unité": "g/kg",
+   "Valeurs": 2.3
+ },
+ {
+   "Paramètres": "Na",
+   "Unité": "g/kg",
+   "Valeurs": 10.2
+ },
+ {
+   "Paramètres": "Fe",
+   "Unité": "g/kg",
+   "Valeurs": 0.4
+ },
+ {
+   "Paramètres": "K",
+   "Unité": "g/kg",
+   "Valeurs": 1.4
+ },
+ {
+   "Paramètres": "Ca",
+   "Unité": "g/kg",
+   "Valeurs": 22
+ },
+ {
+   "Paramètres": "S",
+   "Unité": "g/kg",
+   "Valeurs": 3.9
+ },
+ {
+   "Paramètres": "Glucose",
+   "Unité": "g/kg",
+   "Valeurs": 1.9
+ },
+ {
+   "Paramètres": "Fructose",
+   "Unité": "g/kg",
+   "Valeurs": 1.5
+ },
+ {
+   "Paramètres": "Lactose",
+   "Unité": "g/kg",
+   "Valeurs": 0.83
+ },
+ {
+   "Paramètres": "Sucrose",
+   "Unité": "g/kg",
+   "Valeurs": 0.97
+ },
+ {
+   "Paramètres": "Galactose",
+   "Unité": "g/kg",
+   "Valeurs": 1.4
+ },
+ {
+   "Paramètres": "Xylose",
+   "Unité": "g/kg",
+   "Valeurs": 1.1
+ },
+ {
+   "Paramètres": "Tréhalose",
+   "Unité": "g/kg",
+   "Valeurs": 0.53
+ }
+]
