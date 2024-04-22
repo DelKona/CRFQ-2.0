@@ -448,7 +448,7 @@ var sidebar16 = L.control.sidebar('sidebar16', {
           });
 
 
-// creation du marker de AGROPUR
+// creation du marker de BOULANGERIE St-Donat
 var sidebar17 = L.control.sidebar('sidebar17', {
     closeButton: true,
     position: 'left'
@@ -474,7 +474,7 @@ var sidebar17 = L.control.sidebar('sidebar17', {
           });
 
 
-          // creation du marker de AGROPUR
+          // creation du marker de ASSOCIATION DES BRASSERIES
 var sidebar18 = L.control.sidebar('sidebar18', {
     closeButton: true,
     position: 'left'
@@ -499,6 +499,31 @@ var sidebar18 = L.control.sidebar('sidebar18', {
               marker18.closeTooltip();
           });
 
+
+          // creation du marker de FROMAGERIE ROY
+var sidebar19 = L.control.sidebar('sidebar19', {
+    closeButton: true,
+    position: 'left'
+  });
+  map.addControl(sidebar19);
+  var marker19 = L.marker([46.040847579328, -73.70525431207949],{icon: grayMarker}).addTo(map)
+  .on('click', function () {
+      if (activeSidebar) {
+        activeSidebar.hide();
+      };
+      sidebar19.show();
+      activeSidebar =  sidebar19
+      marker1.on('click', function(e) {
+      var latlng = e.latlng;
+      map.setView(latlng, map.getZoom());
+    })
+  })
+  .on('mouseover', function (e) {
+              marker19.bindTooltip("FROMAGERIE ROY", { direction: 'top', offset: [0, -30] }).openTooltip();
+          })
+          .on('mouseout', function (e) {
+              marker19.closeTooltip();
+          }); 
 
 
 
@@ -535,6 +560,7 @@ var sidebar18 = L.control.sidebar('sidebar18', {
                 marker16.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
                 marker17.addTo(categoryLayers['AGROALIMENTAIRE']);
                 marker18.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker19.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
 
                 // Créez un panneau de contrôle pour activer/désactiver les couches
                 L.control.layers(null, categoryLayers, { collapsed: false }).addTo(map);
@@ -617,3 +643,6 @@ var sidebar18 = L.control.sidebar('sidebar18', {
             L.DomEvent.on(sidebar18.getCloseButton(), 'click', function () {
                 activeSidebar = null;
             });
+            L.DomEvent.on(sidebar19.getCloseButton(), 'click', function () {
+              activeSidebar = null;
+          });
