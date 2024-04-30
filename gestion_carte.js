@@ -4,12 +4,12 @@
             // ajout des tuiles
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 20,
-                minZoom: 6,
+                minZoom: 8,
                 attribution: 'Map data &copy; OpenStreetMap contributors'
             }).addTo(map);
             // définition des limites
-            var southWest = L.latLng(43.035, -76.669); // coordonnées sud-ouest
-            var northEast = L.latLng(47.368, -66.893); // coordonnées nord-est
+            var southWest = L.latLng(45.035, -76.669); // coordonnées sud-ouest
+            var northEast = L.latLng(47.268, -68.893); // coordonnées nord-est
             var bounds = L.latLngBounds(southWest, northEast); // limites de la carte
             // affectation des limites à la carte
             map.setMaxBounds(bounds);
@@ -525,6 +525,32 @@ var sidebar19 = L.control.sidebar('sidebar19', {
               marker19.closeTooltip();
           }); 
 
+                
+
+                // creation du marker de Maison de la Pomme
+      var sidebar20 = L.control.sidebar('sidebar20', {
+        closeButton: true,
+        position: 'left'
+      });
+      map.addControl(sidebar20);
+      var marker20 = L.marker([45.0614478995081, -72.84707434013832],{icon: greenMarker}).addTo(map)
+      .on('click', function () {
+          if (activeSidebar) {
+            activeSidebar.hide();
+          };
+          sidebar20.show();
+          activeSidebar =  sidebar20
+          marker1.on('click', function(e) {
+          var latlng = e.latlng;
+          map.setView(latlng, map.getZoom());
+        })
+      })
+      .on('mouseover', function (e) {
+                  marker20.bindTooltip("Maison de la pomme", { direction: 'top', offset: [0, -30] }).openTooltip();
+              })
+              .on('mouseout', function (e) {
+                  marker20.closeTooltip();
+              }); 
 
 
 
@@ -561,6 +587,7 @@ var sidebar19 = L.control.sidebar('sidebar19', {
                 marker17.addTo(categoryLayers['AGROALIMENTAIRE']);
                 marker18.addTo(categoryLayers['AGROALIMENTAIRE']);
                 marker19.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
+                marker20.addTo(categoryLayers['AGROALIMENTAIRE']);
 
                 // Créez un panneau de contrôle pour activer/désactiver les couches
                 L.control.layers(null, categoryLayers, { collapsed: false }).addTo(map);
@@ -646,3 +673,6 @@ var sidebar19 = L.control.sidebar('sidebar19', {
             L.DomEvent.on(sidebar19.getCloseButton(), 'click', function () {
               activeSidebar = null;
           });
+            L.DomEvent.on(sidebar20.getCloseButton(), 'click', function () {
+                activeSidebar = null;
+            });
