@@ -38,7 +38,7 @@
 
             var grayMarker = L.AwesomeMarkers.icon({
               icon: 'info-circle',
-              markerColor: 'gray'
+              markerColor: 'gray',
             });
 
             var redMarker = L.AwesomeMarkers.icon({
@@ -554,6 +554,59 @@ var sidebar19 = L.control.sidebar('sidebar19', {
 
 
 
+  // creation du marker de Agropur Plessisville
+                var sidebar21 = L.control.sidebar('sidebar21', {
+                  closeButton: true,
+                  position: 'left'
+                });
+                map.addControl(sidebar21);
+                var marker21 = L.marker([46.22403584780846, -71.75935034117677],{icon: grayMarker}).addTo(map)
+                .on('click', function () {
+                    if (activeSidebar) {
+                      activeSidebar.hide();
+                    };
+                    sidebar21.show();
+                    activeSidebar =  sidebar21
+                    marker1.on('click', function(e) {
+                    var latlng = e.latlng;
+                    map.setView(latlng, map.getZoom());
+                  })
+                })
+                .on('mouseover', function (e) {
+                            marker21.bindTooltip("AGROPUR PLESSISVILLE", { direction: 'top', offset: [0, -30] }).openTooltip();
+                        })
+                        .on('mouseout', function (e) {
+                            marker21.closeTooltip();
+                        }); 
+
+
+
+ // creation du marker de Viterra
+ var sidebar22 = L.control.sidebar('sidebar22', {
+  closeButton: true,
+  position: 'left'
+});
+map.addControl(sidebar22);
+var marker22 = L.marker([46.38823259961013, -72.37748705934614],{icon: redMarker}).addTo(map)
+.on('click', function () {
+    if (activeSidebar) {
+      activeSidebar.hide();
+    };
+    sidebar22.show();
+    activeSidebar =  sidebar22
+    marker1.on('click', function(e) {
+    var latlng = e.latlng;
+    map.setView(latlng, map.getZoom());
+  })
+})
+.on('mouseover', function (e) {
+            marker22.bindTooltip("VITERRA", { direction: 'top', offset: [0, -30] }).openTooltip();
+        })
+        .on('mouseout', function (e) {
+            marker22.closeTooltip();
+        }); 
+
+
 
 
 
@@ -588,6 +641,8 @@ var sidebar19 = L.control.sidebar('sidebar19', {
                 marker18.addTo(categoryLayers['AGROALIMENTAIRE']);
                 marker19.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
                 marker20.addTo(categoryLayers['AGROALIMENTAIRE']);
+                marker21.addTo(categoryLayers['INDUSTRIE LAITIÈRE']);
+                marker22.addTo(categoryLayers['PRODUCTION AGRICOLE']);
 
                 // Créez un panneau de contrôle pour activer/désactiver les couches
                 L.control.layers(null, categoryLayers, { collapsed: false }).addTo(map);
@@ -676,3 +731,9 @@ var sidebar19 = L.control.sidebar('sidebar19', {
             L.DomEvent.on(sidebar20.getCloseButton(), 'click', function () {
                 activeSidebar = null;
             });
+            L.DomEvent.on(sidebar21.getCloseButton(), 'click', function () {
+              activeSidebar = null;
+          });
+          L.DomEvent.on(sidebar22.getCloseButton(), 'click', function () {
+            activeSidebar = null;
+        });
