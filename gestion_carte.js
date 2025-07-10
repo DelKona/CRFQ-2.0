@@ -248,7 +248,9 @@
                     .on('mouseout', function (e) {
                         marker8.closeTooltip();
                     });
+
  // creation du marker GREEN OIL
+ /*
             var sidebar9 = L.control.sidebar('sidebar9', {
                 closeButton: true,
                 position: 'left'
@@ -273,6 +275,8 @@
                     .on('mouseout', function (e) {
                         marker9.closeTooltip();
                     });
+*/
+
  // creation du marker BIOCARDEL
             var sidebar10 = L.control.sidebar('sidebar10', {
                 closeButton: true,
@@ -501,31 +505,31 @@ var sidebar18 = L.control.sidebar('sidebar18', {
 
 
           // creation du marker de FROMAGERIE ROY
-var sidebar19 = L.control.sidebar('sidebar19', {
-    closeButton: true,
-    position: 'left'
-  });
-  map.addControl(sidebar19);
-  var marker19 = L.marker([46.040847579328, -73.70525431207949],{icon: grayMarker}).addTo(map)
-  .on('click', function () {
-      if (activeSidebar) {
-        activeSidebar.hide();
-      };
-      sidebar19.show();
-      activeSidebar =  sidebar19
-      marker1.on('click', function(e) {
-      var latlng = e.latlng;
-      map.setView(latlng, map.getZoom());
-    })
-  })
-  .on('mouseover', function (e) {
-              marker19.bindTooltip("FROMAGERIE ROY", { direction: 'top', offset: [0, -30] }).openTooltip();
-          })
-          .on('mouseout', function (e) {
-              marker19.closeTooltip();
-          }); 
-
-                
+/*
+              var sidebar19 = L.control.sidebar('sidebar19', {
+              closeButton: true,
+              position: 'left'
+            });
+            map.addControl(sidebar19);
+            var marker19 = L.marker([46.040847579328, -73.70525431207949],{icon: grayMarker}).addTo(map)
+            .on('click', function () {
+                if (activeSidebar) {
+                  activeSidebar.hide();
+                };
+                sidebar19.show();
+                activeSidebar =  sidebar19
+                marker1.on('click', function(e) {
+                var latlng = e.latlng;
+                map.setView(latlng, map.getZoom());
+              })
+            })
+            .on('mouseover', function (e) {
+                        marker19.bindTooltip("FROMAGERIE ROY", { direction: 'top', offset: [0, -30] }).openTooltip();
+                    })
+                    .on('mouseout', function (e) {
+                        marker19.closeTooltip();
+                    }); 
+ */
 
                 // creation du marker de Maison de la Pomme
       var sidebar20 = L.control.sidebar('sidebar20', {
@@ -582,7 +586,8 @@ var sidebar19 = L.control.sidebar('sidebar19', {
 
 
  // creation du marker de Viterra
- var sidebar22 = L.control.sidebar('sidebar22', {
+ 
+ /*var sidebar22 = L.control.sidebar('sidebar22', {
   closeButton: true,
   position: 'left'
 });
@@ -606,7 +611,7 @@ var marker22 = L.marker([46.38823259961013, -72.37748705934614],{icon: redMarker
             marker22.closeTooltip();
         }); 
 
-
+ */
 
 
 
